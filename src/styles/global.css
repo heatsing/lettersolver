@@ -78,6 +78,7 @@
   --ui-card-hover-bg: #e6ebc5;
   --ui-card-shadow: 0 6px 18px rgba(0, 0, 0, 0.055);
   --ui-card-shadow-hover: 0 5px 12px rgba(0, 0, 0, 0.07);
+  --tool-reference-width: 68rem;
   --ui-primary-shadow: 0 6px 14px rgba(52, 103, 57, 0.2);
   --ui-primary-shadow-hover: 0 8px 18px rgba(52, 103, 57, 0.24);
   --ui-section-gap: 2rem;
@@ -1227,7 +1228,7 @@ html { scroll-behavior: smooth; }
   padding: 1.15rem 1rem 1.5rem;
 }
 .tool-hero-inner {
-  max-width: 860px;
+  max-width: var(--tool-reference-width);
   margin: 0 auto;
 }
 .tool-hero .breadcrumb,
@@ -1255,9 +1256,12 @@ html { scroll-behavior: smooth; }
 /* Tool content parity (post-tool sections) */
 .tool-content > .page-wrapper,
 .tool-content > section {
-  max-width: 860px;
+  max-width: var(--tool-reference-width);
   margin-inline: auto;
   padding-inline: 1.5rem;
+}
+.tool-content .page-wrapper > section {
+  max-width: var(--tool-reference-width);
 }
 .tool-content > section + section,
 .tool-content > .page-wrapper + section,
