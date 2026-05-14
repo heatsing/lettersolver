@@ -37,7 +37,15 @@ function isActive(href: string): boolean {
       </button>
 
       <a href="/" class="wt-bar-logo" aria-label="Word Unscrambler Home">
-        <img src="/site-logo.png" alt="Word Unscrambler" class="wt-bar-logo-img" />
+        <img
+          src="/site-logo.png"
+          alt="Word Unscrambler"
+          class="wt-bar-logo-img"
+          width="186"
+          height="32"
+          fetchpriority="high"
+          decoding="async"
+        />
       </a>
     </div>
 
@@ -159,7 +167,16 @@ function isActive(href: string): boolean {
 <!-- Mobile drawer -->
 <div class="wt-mobile-drawer" id="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Navigation menu">
   <div class="wt-mobile-head">
-    <img src="/site-logo.png" alt="Word Unscrambler" class="wt-mobile-brand" />
+    <img
+      src="/site-logo.png"
+      alt="Word Unscrambler"
+      class="wt-mobile-brand"
+      width="158"
+      height="27"
+      loading="lazy"
+      fetchpriority="low"
+      decoding="async"
+    />
     <button type="button" class="wt-bar-btn" id="mobile-close-btn" aria-label="Close menu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
