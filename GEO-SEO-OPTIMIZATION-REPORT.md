@@ -1,5 +1,5 @@
 # GEO & SEO 优化报告
-## Word Unscrambler - wordunscrambler.cc
+## Word Unscrambler - lettersolver.net
 
 **优化日期**: 2026-01-28  
 **优化范围**: 地理位置（GEO）和搜索引擎优化（SEO）  
@@ -22,12 +22,12 @@
 
 **实现位置**: `app/layout.tsx`
 ```html
-<link rel="alternate" hreflang="en-US" href="https://wordunscrambler.cc" />
-<link rel="alternate" hreflang="en-GB" href="https://wordunscrambler.cc" />
-<link rel="alternate" hreflang="en-CA" href="https://wordunscrambler.cc" />
-<link rel="alternate" hreflang="en-AU" href="https://wordunscrambler.cc" />
-<link rel="alternate" hreflang="en-NZ" href="https://wordunscrambler.cc" />
-<link rel="alternate" hreflang="x-default" href="https://wordunscrambler.cc" />
+<link rel="alternate" hreflang="en-US" href="https://lettersolver.net" />
+<link rel="alternate" hreflang="en-GB" href="https://lettersolver.net" />
+<link rel="alternate" hreflang="en-CA" href="https://lettersolver.net" />
+<link rel="alternate" hreflang="en-AU" href="https://lettersolver.net" />
+<link rel="alternate" hreflang="en-NZ" href="https://lettersolver.net" />
+<link rel="alternate" hreflang="x-default" href="https://lettersolver.net" />
 ```
 
 **SEO 影响**:
@@ -59,7 +59,7 @@ openGraph: {
   },
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://wordunscrambler.cc",
+    "serviceUrl": "https://lettersolver.net",
     "serviceType": "Online"
   }
 }
@@ -97,7 +97,7 @@ openGraph: {
 openGraph: {
   images: [
     {
-      url: 'https://wordunscrambler.cc/opengraph-image',
+      url: 'https://lettersolver.net/opengraph-image',
       width: 1200,
       height: 630,
       alt: 'Word Unscrambler - Word Game Solver',
@@ -113,7 +113,7 @@ openGraph: {
 ```typescript
 twitter: {
   card: 'summary_large_image',
-  images: ['https://wordunscrambler.cc/opengraph-image'],
+  images: ['https://lettersolver.net/opengraph-image'],
 }
 ```
 

@@ -16,7 +16,7 @@
 | 文件 | 变更 |
 |------|------|
 | `vercel.json` | 增加 `/sitemap.xml` → `sitemap-index.xml` 的 301 重定向；为 `sitemap-0/1/2.xml` 增加 `Content-Type: application/xml` 等头 |
-| `public/robots.txt` | 增加一行 `Sitemap: https://wordunscrambler.cc/sitemap.xml` |
+| `public/robots.txt` | 增加一行 `Sitemap: https://lettersolver.net/sitemap.xml` |
 | `package.json` | `build` 后增加 `node scripts/ensure-sitemap.mjs`；新增脚本 `validate:sitemap` |
 | `scripts/ensure-sitemap.mjs` | 新增：若 dist 无 `sitemap-index.xml`，则根据 dist 内页面生成 sitemap 并写入 |
 | `scripts/validate-sitemap.mjs` | 新增：对给定 baseUrl 请求 sitemap，校验状态码、Content-Type、XML、URL 数量等 |
@@ -30,7 +30,7 @@
 "redirects": [
   {
     "source": "/sitemap.xml",
-    "destination": "https://wordunscrambler.cc/sitemap-index.xml",
+    "destination": "https://lettersolver.net/sitemap-index.xml",
     "permanent": true
   }
 ],
@@ -50,8 +50,8 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://wordunscrambler.cc/sitemap-index.xml
-Sitemap: https://wordunscrambler.cc/sitemap.xml
+Sitemap: https://lettersolver.net/sitemap-index.xml
+Sitemap: https://lettersolver.net/sitemap.xml
 ```
 
 ### 3. 构建流程（package.json）
@@ -65,7 +65,7 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 
 - 若 `dist/sitemap-index.xml` 已存在则直接退出。
 - 否则扫描 `dist` 下所有含 `index.html` 的目录，得到路径列表。
-- 生成符合 sitemaps.org 的 `sitemap-index.xml` 与分片 `sitemap-0.xml`（必要时更多），所有 `<loc>` 使用 `https://wordunscrambler.cc/...`。
+- 生成符合 sitemaps.org 的 `sitemap-index.xml` 与分片 `sitemap-0.xml`（必要时更多），所有 `<loc>` 使用 `https://lettersolver.net/...`。
 
 ### 5. validate-sitemap.mjs 用法
 
@@ -73,7 +73,7 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 # 校验生产环境
 npm run validate:sitemap
 # 或
-node scripts/validate-sitemap.mjs https://wordunscrambler.cc
+node scripts/validate-sitemap.mjs https://lettersolver.net
 
 # 本地先 npm run preview，再校验
 node scripts/validate-sitemap.mjs http://localhost:4321
@@ -84,26 +84,26 @@ node scripts/validate-sitemap.mjs http://localhost:4321
 1. **curl 检查 sitemap 与 robots**
 
    ```bash
-   curl -sI https://wordunscrambler.cc/sitemap.xml
+   curl -sI https://lettersolver.net/sitemap.xml
    # 期望: 301 → sitemap-index.xml，或 200（若直接提供 sitemap）
 
-   curl -sI https://wordunscrambler.cc/sitemap-index.xml
+   curl -sI https://lettersolver.net/sitemap-index.xml
    # 期望: 200，Content-Type: application/xml
 
-   curl -sI https://wordunscrambler.cc/robots.txt
+   curl -sI https://lettersolver.net/robots.txt
    # 期望: 200，Content-Type: text/plain
    ```
 
 2. **运行校验脚本**
 
    ```bash
-   node scripts/validate-sitemap.mjs https://wordunscrambler.cc
+   node scripts/validate-sitemap.mjs https://lettersolver.net
    # 期望输出: Validation passed. 以及 URL 数量
    ```
 
 3. **GSC 操作**
 
-   - 在 GSC 的「站点地图」中提交：`https://wordunscrambler.cc/sitemap-index.xml`（推荐）或 `https://wordunscrambler.cc/sitemap.xml`（会 301 到 index）。
+   - 在 GSC 的「站点地图」中提交：`https://lettersolver.net/sitemap-index.xml`（推荐）或 `https://lettersolver.net/sitemap.xml`（会 301 到 index）。
    - 等待抓取；确认「已发现网址数」> 0，无「无法抓取」错误。
 
 ## Canonical / 404 / hreflang

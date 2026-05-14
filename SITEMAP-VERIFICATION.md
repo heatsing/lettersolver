@@ -32,8 +32,8 @@ bun run start
 
 ### 2. 生产环境测试
 访问以下 URL 确认 sitemap 可访问：
-- https://wordunscrambler.cc/sitemap.xml
-- https://www.wordunscrambler.cc/sitemap.xml (如果配置了 www 重定向)
+- https://lettersolver.net/sitemap.xml
+- https://www.lettersolver.net/sitemap.xml (如果配置了 www 重定向)
 
 ### 3. 验证 Sitemap 格式
 使用以下工具验证：
@@ -54,15 +54,15 @@ bun run start
 **解决步骤**:
 ```bash
 # 1. 验证 robots.txt
-curl https://wordunscrambler.cc/robots.txt
+curl https://lettersolver.net/robots.txt
 
 # 应该包含:
 # User-Agent: *
 # Allow: /
-# Sitemap: https://wordunscrambler.cc/sitemap.xml
+# Sitemap: https://lettersolver.net/sitemap.xml
 
 # 2. 验证 sitemap.xml 可访问
-curl -I https://wordunscrambler.cc/sitemap.xml
+curl -I https://lettersolver.net/sitemap.xml
 
 # 应该返回: HTTP/1.1 200 OK
 # Content-Type: application/xml
@@ -78,14 +78,14 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 
 #### 问题 3: www vs 非 www
 确保在 Google Search Console 中添加了正确的域名版本：
-- wordunscrambler.cc
-- www.wordunscrambler.cc (如果使用)
+- lettersolver.net
+- www.lettersolver.net (如果使用)
 
 ## 📝 提交到 Google Search Console
 
 ### 步骤 1: 添加 Sitemap
 1. 登录 [Google Search Console](https://search.google.com/search-console)
-2. 选择资源: `wordunscrambler.cc`
+2. 选择资源: `lettersolver.net`
 3. 左侧菜单 → "站点地图"
 4. 输入: `sitemap.xml`
 5. 点击"提交"
@@ -110,10 +110,10 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 <!-- sitemap-index.xml -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://wordunscrambler.cc/sitemap-main.xml</loc>
+    <loc>https://lettersolver.net/sitemap-main.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://wordunscrambler.cc/sitemap-words.xml</loc>
+    <loc>https://lettersolver.net/sitemap-words.xml</loc>
   </sitemap>
 </sitemapindex>
 ```
@@ -133,11 +133,11 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 curl -X POST "https://api.indexnow.org/indexnow" \
   -H "Content-Type: application/json" \
   -d '{
-    "host": "wordunscrambler.cc",
+    "host": "lettersolver.net",
     "key": "your-api-key",
     "urlList": [
-      "https://wordunscrambler.cc/wordle-solver",
-      "https://wordunscrambler.cc/anagram-solver"
+      "https://lettersolver.net/wordle-solver",
+      "https://lettersolver.net/anagram-solver"
     ]
   }'
 ```
@@ -214,8 +214,8 @@ curl -X POST "https://api.indexnow.org/indexnow" \
 
 3. **验证 DNS 设置**
    ```bash
-   nslookup wordunscrambler.cc
-   dig wordunscrambler.cc
+   nslookup lettersolver.net
+   dig lettersolver.net
    ```
 
 4. **检查 CDN/防火墙**
@@ -227,5 +227,5 @@ curl -X POST "https://api.indexnow.org/indexnow" \
 ---
 
 **最后更新**: 2026-01-18
-**Sitemap URL**: https://wordunscrambler.cc/sitemap.xml
+**Sitemap URL**: https://lettersolver.net/sitemap.xml
 **总 URL 数**: 738

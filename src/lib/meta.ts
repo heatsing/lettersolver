@@ -1,4 +1,4 @@
-const BASE = 'https://wordunscrambler.cc';
+const BASE = 'https://lettersolver.net';
 
 export interface PageMeta {
   title: string;

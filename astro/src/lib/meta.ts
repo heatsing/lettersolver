@@ -2,7 +2,7 @@
  * Page meta: canonical, title, description. All absolute URLs.
  */
 
-const BASE = 'https://wordunscrambler.cc';
+const BASE = 'https://lettersolver.net';
 
 export interface PageMeta {
   title: string;

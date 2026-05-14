@@ -17,7 +17,7 @@
 - ✅ 正确的优先级和更新频率设置
 - ✅ 符合 Google Sitemap 0.9 规范
 
-**访问地址**: https://wordunscrambler.cc/sitemap.xml
+**访问地址**: https://lettersolver.net/sitemap.xml
 
 ### 2. Robots.txt 配置 ✅
 
@@ -28,7 +28,7 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://wordunscrambler.cc/sitemap.xml
+Sitemap: https://lettersolver.net/sitemap.xml
 ```
 
 ✅ 正确引用 sitemap URL  
@@ -83,12 +83,12 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
    ```
 
 2. **验证 Sitemap 可访问**
-   - 访问: https://wordunscrambler.cc/sitemap.xml
+   - 访问: https://lettersolver.net/sitemap.xml
    - 应该看到格式正确的 XML 文件
 
 3. **提交到 Google Search Console**
    - 访问: https://search.google.com/search-console
-   - 添加资源: `wordunscrambler.cc`
+   - 添加资源: `lettersolver.net`
    - 提交 sitemap: `sitemap.xml`
 
 ### 详细步骤

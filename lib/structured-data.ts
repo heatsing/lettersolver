@@ -1,6 +1,6 @@
 export type JsonLd = Record<string, unknown>
 
-const baseUrl = "https://wordunscrambler.cc"
+const baseUrl = "https://lettersolver.net"
 
 export function getOrganizationSchema(): JsonLd {
   return {

@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.resolve(ROOT, process.argv[2] || 'dist');
-const SITE = 'https://wordunscrambler.cc';
+const SITE = 'https://lettersolver.net';
 const ENTRY_LIMIT = 45000;
 const NS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
 
@@ -60,13 +60,20 @@ function writeUrlsetChunk(urls, outPath) {
 
 function main() {
   const indexPath = path.join(DIST, 'sitemap-index.xml');
-  if (fs.existsSync(indexPath)) {
-    console.log('ensure-sitemap: sitemap-index.xml already exists, skip.');
+  if (!fs.existsSync(DIST)) {
+    console.warn('ensure-sitemap: dist not found, skip.');
     return;
   }
 
-  if (!fs.existsSync(DIST)) {
-    console.warn('ensure-sitemap: dist not found, skip.');
+  const sitemapPath = path.join(DIST, 'sitemap.xml');
+  const firstChunkPath = path.join(DIST, 'sitemap-0.xml');
+  if (fs.existsSync(firstChunkPath) && !fs.existsSync(sitemapPath)) {
+    fs.copyFileSync(firstChunkPath, sitemapPath);
+    console.log('ensure-sitemap: copied sitemap-0.xml to sitemap.xml.');
+  }
+
+  if (fs.existsSync(indexPath)) {
+    console.log('ensure-sitemap: sitemap-index.xml already exists, skip.');
     return;
   }
 
@@ -88,6 +95,10 @@ function main() {
     const chunkPath = path.join(DIST, `sitemap-${chunkIndex}.xml`);
     writeUrlsetChunk(slice, chunkPath);
     chunks.push({ path: chunkPath, url: `${SITE}/sitemap-${chunkIndex}.xml` });
+  }
+
+  if (chunks.length > 0 && !fs.existsSync(sitemapPath)) {
+    fs.copyFileSync(chunks[0].path, sitemapPath);
   }
 
   const lastmod = new Date().toISOString().split('T')[0];

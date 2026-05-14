@@ -212,7 +212,7 @@ export const searchIntent = {
   ],
 
   navigational: [
-    'wordunscrambler.cc',
+    'lettersolver.net',
     'word unscrambler tool',
     'wordle helper site'
   ],

@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-const SITE = 'https://wordunscrambler.cc';
+const SITE = 'https://lettersolver.net';
 const HIGH_PRIORITY_PATHS = new Set([
   '/',
   '/word-scramble/',

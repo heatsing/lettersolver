@@ -10,7 +10,7 @@ astro/
 ├── package.json
 ├── tsconfig.json
 ├── public/
-│   ├── robots.txt       # Allow /, Sitemap: https://wordunscrambler.cc/sitemap.xml
+│   ├── robots.txt       # Allow /, Sitemap: https://lettersolver.net/sitemap.xml
 │   ├── sitemap.xml      # Static fallback (/, /unscramble)
 │   └── data/            # words_2.json … words_10.json (from build:dict)
 ├── scripts/
@@ -78,7 +78,7 @@ npm run preview # serve dist/
 ## Verification
 
 - **Sitemap:** `curl -I https://your-domain.com/sitemap.xml` → 200, `Content-Type: application/xml`
-- **Robots:** `curl https://your-domain.com/robots.txt` → contains `Sitemap: https://wordunscrambler.cc/sitemap.xml`
+- **Robots:** `curl https://your-domain.com/robots.txt` → contains `Sitemap: https://lettersolver.net/sitemap.xml`
 - **Structured data:** View source on `/` and `/unscramble` for `application/ld+json` (WebSite, SoftwareApplication, FAQPage).
 
 ## Optional: /api/unscramble

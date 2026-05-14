@@ -3,9 +3,9 @@
 ## ⚠️ 当前问题
 
 Google Search Console 报告以下 sitemap 无法抓取：
-- ✗ https://wordunscrambler.cc/robots.txt
-- ✗ https://www.wordunscrambler.cc/sitemap.xml
-- ✗ https://wordunscrambler.cc/sitemap.xml
+- ✗ https://lettersolver.net/robots.txt
+- ✗ https://www.lettersolver.net/sitemap.xml
+- ✗ https://lettersolver.net/sitemap.xml
 
 ## ✅ 本地验证（已通过）
 
@@ -22,7 +22,7 @@ Google Search Console 报告以下 sitemap 无法抓取：
 
 ```bash
 # 测试域名是否可访问
-curl -I https://wordunscrambler.cc
+curl -I https://lettersolver.net
 
 # 预期输出：HTTP/2 200
 # 如果得到 404 或超时，说明网站未部署或 DNS 未生效
@@ -32,7 +32,7 @@ curl -I https://wordunscrambler.cc
 
 ```bash
 # 测试 sitemap.xml
-curl https://wordunscrambler.cc/sitemap.xml
+curl https://lettersolver.net/sitemap.xml
 
 # 预期输出：XML 格式的 sitemap
 # 如果得到 404，说明路由配置有问题
@@ -42,22 +42,22 @@ curl https://wordunscrambler.cc/sitemap.xml
 
 ```bash
 # 测试 robots.txt
-curl https://wordunscrambler.cc/robots.txt
+curl https://lettersolver.net/robots.txt
 
 # 预期输出：
 # User-Agent: *
 # Allow: /
 # Disallow: /private/
-# Sitemap: https://wordunscrambler.cc/sitemap.xml
+# Sitemap: https://lettersolver.net/sitemap.xml
 ```
 
 ### 步骤 4: 检查 www 重定向
 
 ```bash
 # 测试 www 域名
-curl -I https://www.wordunscrambler.cc
+curl -I https://www.lettersolver.net
 
-# 应该返回 301 重定向到 https://wordunscrambler.cc
+# 应该返回 301 重定向到 https://lettersolver.net
 # 或者返回 200（如果两个都支持）
 ```
 
@@ -88,7 +88,7 @@ git push origin claude/modify-repository-code-0dtcZ
 
 5. 验证部署
 ```bash
-curl https://wordunscrambler.cc/sitemap.xml
+curl https://lettersolver.net/sitemap.xml
 ```
 
 ### 方案 B: DNS 未生效
@@ -98,8 +98,8 @@ curl https://wordunscrambler.cc/sitemap.xml
 **解决步骤**:
 1. 检查 DNS 记录
 ```bash
-dig wordunscrambler.cc
-dig www.wordunscrambler.cc
+dig lettersolver.net
+dig www.lettersolver.net
 ```
 
 2. 确保 A 记录或 CNAME 指向正确的服务器
@@ -125,10 +125,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'www.wordunscrambler.cc',
+            value: 'www.lettersolver.net',
           },
         ],
-        destination: 'https://wordunscrambler.cc/:path*',
+        destination: 'https://lettersolver.net/:path*',
         permanent: true,
       },
     ];
@@ -142,13 +142,13 @@ module.exports = nextConfig;
 
 **Vercel**:
 在项目设置 → Domains 中：
-- 添加 `www.wordunscrambler.cc` 并设置重定向到 `wordunscrambler.cc`
+- 添加 `www.lettersolver.net` 并设置重定向到 `lettersolver.net`
 
 **Cloudflare**:
 Page Rules → 创建规则：
-- URL: `www.wordunscrambler.cc/*`
+- URL: `www.lettersolver.net/*`
 - Forwarding URL: `301 - Permanent Redirect`
-- Destination: `https://wordunscrambler.cc/$1`
+- Destination: `https://lettersolver.net/$1`
 
 ### 方案 D: 构建产物问题
 
@@ -174,20 +174,20 @@ ls -la .next/server/app/robots.txt
 ### 1. 删除旧的 Sitemap 提交
 
 在 GSC 中删除以下条目：
-- ✗ https://wordunscrambler.cc/robots.txt （这不应该作为 sitemap 提交）
-- ✗ https://www.wordunscrambler.cc/sitemap.xml （如果使用重定向）
+- ✗ https://lettersolver.net/robots.txt （这不应该作为 sitemap 提交）
+- ✗ https://www.lettersolver.net/sitemap.xml （如果使用重定向）
 
 ### 2. 仅提交正确的 Sitemap
 
 只提交一个：
 ```
-https://wordunscrambler.cc/sitemap.xml
+https://lettersolver.net/sitemap.xml
 ```
 
 ### 3. 验证 Property
 
 确保在 GSC 中验证了正确的 property：
-- 使用 `wordunscrambler.cc`（非 www）
+- 使用 `lettersolver.net`（非 www）
 - 或两者都验证但设置首选域
 
 ### 4. 请求索引
@@ -202,30 +202,30 @@ https://wordunscrambler.cc/sitemap.xml
 
 - [ ] 1. 网站首页可访问
   ```bash
-  curl -I https://wordunscrambler.cc
+  curl -I https://lettersolver.net
   ```
 
 - [ ] 2. robots.txt 可访问
   ```bash
-  curl https://wordunscrambler.cc/robots.txt
+  curl https://lettersolver.net/robots.txt
   ```
 
 - [ ] 3. sitemap.xml 可访问并包含正确的 URL 数量
   ```bash
-  curl https://wordunscrambler.cc/sitemap.xml | grep -o "<url>" | wc -l
+  curl https://lettersolver.net/sitemap.xml | grep -o "<url>" | wc -l
   # 应该返回 738
   ```
 
 - [ ] 4. www 重定向正常
   ```bash
-  curl -I https://www.wordunscrambler.cc
+  curl -I https://www.lettersolver.net
   # 应该返回 301 或 308 重定向
   ```
 
 - [ ] 5. sitemap 中的示例 URL 可访问
   ```bash
-  curl -I https://wordunscrambler.cc/5-letter-words
-  curl -I https://wordunscrambler.cc/word-unscrambler
+  curl -I https://lettersolver.net/5-letter-words
+  curl -I https://lettersolver.net/word-unscrambler
   ```
 
 ## 📊 验证脚本
@@ -235,9 +235,9 @@ https://wordunscrambler.cc/sitemap.xml
 ```bash
 #!/bin/bash
 
-echo "🔍 Verifying wordunscrambler.cc deployment..."
+echo "🔍 Verifying lettersolver.net deployment..."
 
-DOMAIN="https://wordunscrambler.cc"
+DOMAIN="https://lettersolver.net"
 
 # 1. Check homepage
 echo -n "1. Homepage: "
@@ -266,7 +266,7 @@ fi
 
 # 4. Check www redirect
 echo -n "4. www redirect: "
-WWW_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://www.wordunscrambler.cc)
+WWW_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://www.lettersolver.net)
 if [ "$WWW_CODE" = "301" ] || [ "$WWW_CODE" = "308" ]; then
   echo "✓ OK (redirects)"
 elif [ "$WWW_CODE" = "200" ]; then
@@ -318,7 +318,7 @@ chmod +x scripts/verify-deployment.sh
 如果完成所有步骤后仍然显示"无法抓取"：
 
 1. **使用 Google 的 URL 检查工具**
-   - 输入: `https://wordunscrambler.cc/sitemap.xml`
+   - 输入: `https://lettersolver.net/sitemap.xml`
    - 点击"测试实际 URL"
    - 查看具体错误信息
 
@@ -328,19 +328,19 @@ chmod +x scripts/verify-deployment.sh
 
 3. **验证 SSL 证书**
    ```bash
-   curl -vI https://wordunscrambler.cc 2>&1 | grep -i "ssl"
+   curl -vI https://lettersolver.net 2>&1 | grep -i "ssl"
    ```
 
 4. **测试 Googlebot 抓取**
    使用 [Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly)
-   输入: `https://wordunscrambler.cc`
+   输入: `https://lettersolver.net`
 
 ## 📞 需要帮助？
 
 如果问题持续，请提供：
 1. 部署平台（Vercel/Netlify/其他）
-2. `curl -I https://wordunscrambler.cc` 的输出
-3. `curl https://wordunscrambler.cc/sitemap.xml` 的前 50 行
+2. `curl -I https://lettersolver.net` 的输出
+3. `curl https://lettersolver.net/sitemap.xml` 的前 50 行
 4. Google Search Console 的完整错误信息截图
 
 ---

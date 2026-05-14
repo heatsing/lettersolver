@@ -21,7 +21,7 @@ const webPageSchema = {
   inLanguage: 'en-US',
   isPartOf: {
     '@type': 'WebSite',
-    url: 'https://wordunscrambler.cc',
+    url: 'https://lettersolver.net',
     name: 'Word Unscrambler',
   },
 };
@@ -32,14 +32,14 @@ const pathSegments = pathname
   .map((seg) => decodeURIComponent(seg).replace(/[-_]/g, ' '));
 
 const breadcrumbItems = [
-  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wordunscrambler.cc/' },
+  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lettersolver.net/' },
   ...pathSegments.map((segment, index) => {
     const urlPath = '/' + pathname.split('/').filter(Boolean).slice(0, index + 1).join('/') + '/';
     return {
       '@type': 'ListItem',
       position: index + 2,
       name: segment.replace(/\b\w/g, (m) => m.toUpperCase()),
-      item: `https://wordunscrambler.cc${urlPath}`,
+      item: `https://lettersolver.net${urlPath}`,
     };
   }),
 ];

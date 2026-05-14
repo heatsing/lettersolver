@@ -5,8 +5,8 @@
   "installCommand": "npm install",
   "redirects": [
     {
-      "source": "/sitemap.xml",
-      "destination": "https://wordunscrambler.cc/sitemap-index.xml",
+      "source": "/sitemap-0.xml",
+      "destination": "https://lettersolver.net/sitemap.xml",
       "permanent": true
     }
   ],

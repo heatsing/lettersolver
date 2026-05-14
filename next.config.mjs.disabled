@@ -84,10 +84,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'www.wordunscrambler.cc',
+            value: 'www.lettersolver.net',
           },
         ],
-        destination: 'https://wordunscrambler.cc/:path*',
+        destination: 'https://lettersolver.net/:path*',
         permanent: true,
       },
     ]

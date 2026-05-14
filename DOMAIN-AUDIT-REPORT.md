@@ -1,15 +1,15 @@
 # 域名配置审计报告
-## Word Unscrambler - wordunscrambler.cc
+## Word Unscrambler - lettersolver.net
 
 **审计日期**: 2026-01-25
 **审计范围**: 全站域名配置检查
-**目标**: 确保所有域名统一为 wordunscrambler.cc，优化 Google 抓取
+**目标**: 确保所有域名统一为 lettersolver.net，优化 Google 抓取
 
 ---
 
 ## ✅ 审计结果：全部通过
 
-所有配置文件、元数据、Schema 标记和 URL 均正确使用 **wordunscrambler.cc** 域名。
+所有配置文件、元数据、Schema 标记和 URL 均正确使用 **lettersolver.net** 域名。
 
 ---
 
@@ -19,12 +19,12 @@
 
 #### ✅ app/layout.tsx
 ```typescript
-metadataBase: new URL('https://wordunscrambler.cc')
-openGraph.url: 'https://wordunscrambler.cc'
-alternates.canonical: 'https://wordunscrambler.cc'
-organizationSchema.url: "https://wordunscrambler.cc"
-websiteSchema.url: "https://wordunscrambler.cc"
-searchAction.target: "https://wordunscrambler.cc/word-unscrambler?q={search_term_string}"
+metadataBase: new URL('https://lettersolver.net')
+openGraph.url: 'https://lettersolver.net'
+alternates.canonical: 'https://lettersolver.net'
+organizationSchema.url: "https://lettersolver.net"
+websiteSchema.url: "https://lettersolver.net"
+searchAction.target: "https://lettersolver.net/word-unscrambler?q={search_term_string}"
 ```
 
 **Google Analytics ID**: G-FKV97BJX9X
@@ -35,8 +35,8 @@ searchAction.target: "https://wordunscrambler.cc/word-unscrambler?q={search_term
 // WWW 重定向到非 WWW（SEO 最佳实践）
 redirects: [{
   source: '/:path*',
-  has: [{ type: 'host', value: 'www.wordunscrambler.cc' }],
-  destination: 'https://wordunscrambler.cc/:path*',
+  has: [{ type: 'host', value: 'www.lettersolver.net' }],
+  destination: 'https://lettersolver.net/:path*',
   permanent: true  // 301 永久重定向
 }]
 ```
@@ -66,28 +66,28 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://wordunscrambler.cc/sitemap.xml
+Sitemap: https://lettersolver.net/sitemap.xml
 ```
 
 **状态**: ✅ 允许所有爬虫
-**Sitemap 引用**: ✅ 正确指向 wordunscrambler.cc
+**Sitemap 引用**: ✅ 正确指向 lettersolver.net
 
 #### ✅ public/sitemap.xml
 - **总 URL 数量**: 764 个
 - **文件大小**: 100KB（远低于 50MB 限制）
-- **URL 格式**: 所有 URL 均为 `https://wordunscrambler.cc/*`
+- **URL 格式**: 所有 URL 均为 `https://lettersolver.net/*`
 - **更新频率**: daily（首页）, weekly（工具页）, monthly（词库页）
 - **优先级**: 0.6 - 1.0（合理分布）
 
 **示例 URL**:
 ```xml
 <url>
-  <loc>https://wordunscrambler.cc/</loc>
+  <loc>https://lettersolver.net/</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
-  <loc>https://wordunscrambler.cc/wordle-solver</loc>
+  <loc>https://lettersolver.net/wordle-solver</loc>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
@@ -104,16 +104,16 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 
 | 页面 | Canonical URL |
 |------|---------------|
-| Wordle Solver | `https://wordunscrambler.cc/wordle-solver` |
-| Anagram Solver | `https://wordunscrambler.cc/anagram-solver` |
-| Scrabble | `https://wordunscrambler.cc/scrabble` |
-| Words with Friends | `https://wordunscrambler.cc/words-with-friends` |
-| Jumble Solver | `https://wordunscrambler.cc/jumble-solver` |
-| Word Generator | `https://wordunscrambler.cc/word-generator` |
-| Word Finder | `https://wordunscrambler.cc/word-finder` |
-| Word Scramble | `https://wordunscrambler.cc/word-scramble` |
-| Descrambler | `https://wordunscrambler.cc/descrambler` |
-| Unscramble | `https://wordunscrambler.cc/unscramble` |
+| Wordle Solver | `https://lettersolver.net/wordle-solver` |
+| Anagram Solver | `https://lettersolver.net/anagram-solver` |
+| Scrabble | `https://lettersolver.net/scrabble` |
+| Words with Friends | `https://lettersolver.net/words-with-friends` |
+| Jumble Solver | `https://lettersolver.net/jumble-solver` |
+| Word Generator | `https://lettersolver.net/word-generator` |
+| Word Finder | `https://lettersolver.net/word-finder` |
+| Word Scramble | `https://lettersolver.net/word-scramble` |
+| Descrambler | `https://lettersolver.net/descrambler` |
+| Unscramble | `https://lettersolver.net/unscramble` |
 
 #### ✅ 动态路由页面
 **继承自 metadataBase**: 所有动态生成的页面（如 `/5-letter-words-starting-with/a`）自动继承正确的 base URL
@@ -133,8 +133,8 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Word Unscrambler",
-  "url": "https://wordunscrambler.cc",
-  "logo": "https://wordunscrambler.cc/opengraph-image"
+  "url": "https://lettersolver.net",
+  "logo": "https://lettersolver.net/opengraph-image"
 }
 ```
 
@@ -144,11 +144,11 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Word Unscrambler",
-  "url": "https://wordunscrambler.cc",
+  "url": "https://lettersolver.net",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
-      "urlTemplate": "https://wordunscrambler.cc/word-unscrambler?q={search_term_string}"
+      "urlTemplate": "https://lettersolver.net/word-unscrambler?q={search_term_string}"
     }
   }
 }
@@ -168,7 +168,7 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 
 #### ✅ Open Graph 标签
 ```html
-<meta property="og:url" content="https://wordunscrambler.cc" />
+<meta property="og:url" content="https://lettersolver.net" />
 <meta property="og:site_name" content="Word Unscrambler" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
@@ -222,8 +222,8 @@ robots: {
 
 | 域名 | 使用次数 | 状态 |
 |------|---------|------|
-| `https://wordunscrambler.cc` | 785+ | ✅ 正确 |
-| `https://www.wordunscrambler.cc` | 1（重定向配置） | ✅ 301 重定向到非 WWW |
+| `https://lettersolver.net` | 785+ | ✅ 正确 |
+| `https://www.lettersolver.net` | 1（重定向配置） | ✅ 301 重定向到非 WWW |
 | 其他域名 | 0 | ✅ 无 |
 
 **URL 格式规范**:
@@ -269,7 +269,7 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ## 📝 建议与改进
 
 ### 已完成 ✅
-1. ✅ 统一域名为 wordunscrambler.cc
+1. ✅ 统一域名为 lettersolver.net
 2. ✅ WWW 到非 WWW 的 301 重定向
 3. ✅ Sitemap.xml Content-Type 头部修复
 4. ✅ 结构化数据（Organization + WebSite Schema）
@@ -290,7 +290,7 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 ✅ **全站域名配置完全符合 Google SEO 最佳实践**
 
-- 所有页面使用统一域名 `wordunscrambler.cc`
+- 所有页面使用统一域名 `lettersolver.net`
 - Sitemap 包含 764 个 URL，格式正确
 - robots.txt 正确指向 sitemap
 - 结构化数据完整（Organization + WebSite）
@@ -304,8 +304,8 @@ Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 ## 📞 联系方式
 
-**Support Email**: support@wordunscrambler.cc
-**Website**: https://wordunscrambler.cc
+**Support Email**: support@lettersolver.net
+**Website**: https://lettersolver.net
 
 ---
 

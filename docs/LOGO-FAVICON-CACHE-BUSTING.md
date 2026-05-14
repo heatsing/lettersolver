@@ -40,7 +40,7 @@ No query strings needed; the new filename is enough for cache busting.
 ## Verification after deploy
 
 1. **Favicon**
-   - Open `https://wordunscrambler.cc` in a **new incognito/private** window.
+   - Open `https://lettersolver.net` in a **new incognito/private** window.
    - Check the browser tab: it should show the new favicon.
 
 2. **Apple touch icon**
@@ -48,11 +48,11 @@ No query strings needed; the new filename is enough for cache busting.
    - Under "Application" → "Manifest", confirm icon URLs point to `.../icon-v2.svg` and `.../apple-icon-v2.png` (or current version).
 
 3. **og:image**
-   - View page source, find `<meta property="og:image" content="https://wordunscrambler.cc/apple-icon-v2.png" />`.
+   - View page source, find `<meta property="og:image" content="https://lettersolver.net/apple-icon-v2.png" />`.
    - Or use [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) / [Twitter Card Validator](https://cards-dev.twitter.com/validator) and confirm the image shown is the new one.
 
 4. **Direct URL**
-   - Open `https://wordunscrambler.cc/apple-icon-v2.png` in the browser; it should return 200 and the new image (no old cached image).
+   - Open `https://lettersolver.net/apple-icon-v2.png` in the browser; it should return 200 and the new image (no old cached image).
 
 5. **Hard refresh**
-   - If the tab still shows the old icon, do a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) or clear site data for wordunscrambler.cc.
+   - If the tab still shows the old icon, do a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) or clear site data for lettersolver.net.

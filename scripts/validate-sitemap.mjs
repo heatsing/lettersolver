@@ -3,7 +3,7 @@
  * Validate sitemap: status 200, Content-Type xml, valid XML, absolute locs, min URLs.
  * Usage: node scripts/validate-sitemap.mjs [baseUrl]
  * Example: node scripts/validate-sitemap.mjs http://localhost:4321
- *          node scripts/validate-sitemap.mjs https://wordunscrambler.cc
+ *          node scripts/validate-sitemap.mjs https://lettersolver.net
  */
 
 const BASE = process.argv[2] || 'http://localhost:4321';

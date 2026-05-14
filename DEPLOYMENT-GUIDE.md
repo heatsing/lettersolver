@@ -1,5 +1,5 @@
 # 部署指南
-## Word Unscrambler - wordunscrambler.cc
+## Word Unscrambler - lettersolver.net
 
 **最后更新**: 2026-01-28  
 **状态**: 代码已推送到 GitHub，等待部署
@@ -33,10 +33,10 @@
 3. **验证部署**
    ```bash
    # 检查网站是否可访问
-   curl -I https://wordunscrambler.cc
+   curl -I https://lettersolver.net
    
    # 检查 sitemap
-   curl https://wordunscrambler.cc/sitemap.xml
+   curl https://lettersolver.net/sitemap.xml
    ```
 
 ### 方式 2: Vercel CLI 手动部署
@@ -74,17 +74,17 @@
 ### 部署后验证
 
 #### 1. 网站可访问性
-- [ ] 首页可访问: https://wordunscrambler.cc
+- [ ] 首页可访问: https://lettersolver.net
 - [ ] 主要工具页面可访问
 - [ ] 新页面可访问:
-  - https://wordunscrambler.cc/text-twist
-  - https://wordunscrambler.cc/word-search-solver
-  - https://wordunscrambler.cc/hangman-solver
-  - https://wordunscrambler.cc/letter-boxed-solver
+  - https://lettersolver.net/text-twist
+  - https://lettersolver.net/word-search-solver
+  - https://lettersolver.net/hangman-solver
+  - https://lettersolver.net/letter-boxed-solver
 
 #### 2. SEO 文件
-- [ ] Sitemap 可访问: https://wordunscrambler.cc/sitemap.xml
-- [ ] Robots.txt 可访问: https://wordunscrambler.cc/robots.txt
+- [ ] Sitemap 可访问: https://lettersolver.net/sitemap.xml
+- [ ] Robots.txt 可访问: https://lettersolver.net/robots.txt
 - [ ] Sitemap 格式正确（XML）
 - [ ] Sitemap 包含所有页面（740+）
 
@@ -204,7 +204,7 @@ vercel logs
 - **Vercel Dashboard**: https://vercel.com/dashboard
 - **GitHub 仓库**: https://github.com/heatsing/word-unscrambler
 - **Google Search Console**: https://search.google.com/search-console
-- **网站**: https://wordunscrambler.cc
+- **网站**: https://lettersolver.net
 
 ---
 

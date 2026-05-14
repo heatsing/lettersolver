@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wordunscrambler.cc/sitemap.xml
+Sitemap: https://lettersolver.net/sitemap.xml

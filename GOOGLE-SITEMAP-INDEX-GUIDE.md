@@ -1,5 +1,5 @@
 # Google 站点地图索引完整指南
-## Word Unscrambler - wordunscrambler.cc
+## Word Unscrambler - lettersolver.net
 
 **创建日期**: 2026-01-28  
 **目标**: 确保 Google 能够正确抓取和索引所有页面
@@ -38,7 +38,7 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://wordunscrambler.cc/sitemap.xml
+Sitemap: https://lettersolver.net/sitemap.xml
 ```
 
 ✅ 正确引用 sitemap URL  
@@ -61,7 +61,7 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 1. 访问 [Google Search Console](https://search.google.com/search-console)
 2. 点击"添加资源"
 3. 选择"网址前缀"方式
-4. 输入: `https://wordunscrambler.cc`
+4. 输入: `https://lettersolver.net`
 5. 选择验证方法（推荐使用 HTML 标签或 DNS 验证）
 6. 完成验证
 
@@ -84,7 +84,7 @@ Sitemap: https://wordunscrambler.cc/sitemap.xml
 
 ```bash
 # 测试 sitemap 访问
-curl -I https://wordunscrambler.cc/sitemap.xml
+curl -I https://lettersolver.net/sitemap.xml
 
 # 应该返回:
 # HTTP/1.1 200 OK
@@ -92,7 +92,7 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 ```
 
 或者在浏览器中直接访问：
-- https://wordunscrambler.cc/sitemap.xml
+- https://lettersolver.net/sitemap.xml
 
 应该看到格式正确的 XML 文件。
 
@@ -113,7 +113,7 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 在 Google Search Console 中使用"URL 检查"工具：
 
 1. 在 Search Console 顶部搜索框输入完整 URL
-2. 例如: `https://wordunscrambler.cc/wordle-solver`
+2. 例如: `https://lettersolver.net/wordle-solver`
 3. 点击"测试实际网址"
 4. 查看索引状态
 
@@ -153,11 +153,11 @@ curl -I https://wordunscrambler.cc/sitemap.xml
    curl -X POST "https://api.indexnow.org/indexnow" \
      -H "Content-Type: application/json" \
      -d '{
-       "host": "wordunscrambler.cc",
+       "host": "lettersolver.net",
        "key": "your-api-key",
        "urlList": [
-         "https://wordunscrambler.cc/wordle-solver",
-         "https://wordunscrambler.cc/anagram-solver"
+         "https://lettersolver.net/wordle-solver",
+         "https://lettersolver.net/anagram-solver"
        ]
      }'
    ```
@@ -214,10 +214,10 @@ curl -I https://wordunscrambler.cc/sitemap.xml
 **解决方案**:
 ```bash
 # 1. 验证 sitemap 可访问
-curl -I https://wordunscrambler.cc/sitemap.xml
+curl -I https://lettersolver.net/sitemap.xml
 
 # 2. 验证 robots.txt
-curl https://wordunscrambler.cc/robots.txt
+curl https://lettersolver.net/robots.txt
 
 # 3. 检查服务器日志
 ```
@@ -368,6 +368,6 @@ curl https://wordunscrambler.cc/robots.txt
 ---
 
 **最后更新**: 2026-01-28  
-**Sitemap URL**: https://wordunscrambler.cc/sitemap.xml  
+**Sitemap URL**: https://lettersolver.net/sitemap.xml
 **总页面数**: 740+  
 **维护者**: Word Unscrambler Team

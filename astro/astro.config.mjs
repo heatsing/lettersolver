@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
-const SITE = 'https://wordunscrambler.cc';
+const SITE = 'https://lettersolver.net';
 
 export default defineConfig({
   site: SITE,

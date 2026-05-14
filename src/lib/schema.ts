@@ -1,6 +1,6 @@
 import { ASSET_PATHS } from './assets-version';
 
-const BASE = 'https://wordunscrambler.cc';
+const BASE = 'https://lettersolver.net';
 
 export function getOrganizationSchema() {
   return {
