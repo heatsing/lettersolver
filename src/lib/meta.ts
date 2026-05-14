@@ -36,6 +36,6 @@ export function getMeta(
   };
 }
 
-export const DEFAULT_TITLE = 'Word Unscrambler – Unscramble Letters for Wordle, Scrabble & More';
+export const DEFAULT_TITLE = 'Unscramble Letters for Wordle, Scrabble & More | Letter Solver';
 export const DEFAULT_DESCRIPTION =
   'Unscramble jumbled letters into real words. Works for Wordle, Scrabble, Words with Friends, and crosswords. No sign-up. Free in your browser.';
