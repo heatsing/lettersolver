@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
 }
@@ -10,15 +11,28 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--color-primary);
-  --color-primary-foreground: #fff;
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-card: var(--card);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --radius-default: var(--radius);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 :root {
@@ -27,13 +41,23 @@
   --color-primary: #346739;
   --color-primary-hover: #2d5a31;
   --color-primary-light: #9FCB98;
+  --color-primary-foreground: #ffffff;
   --background: #F2EDC2;
   --foreground: #2b3a2b;
+  --card-foreground: #2b3a2b;
+  --popover: #f8f5d8;
+  --popover-foreground: #2b3a2b;
+  --secondary: #e6e9c5;
+  --secondary-foreground: #2b3a2b;
   --muted: #e6e9c5;
   --muted-foreground: #566856;
   --border: #b9c890;
+  --input: #9fba84;
+  --ring: #346739;
   --accent: #9FCB98;
   --accent-foreground: #233c24;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
   --card: #f8f5d8;
   --radius: 0.75rem;
   --hero-gradient-start: #346739;
@@ -85,11 +109,21 @@
   --wordle-empty-bg: transparent;
   --background: #1e2b1f;
   --foreground: #e8f2d8;
+  --card-foreground: #e8f2d8;
+  --popover: #253626;
+  --popover-foreground: #e8f2d8;
+  --color-primary-foreground: #ffffff;
+  --secondary: #28382b;
+  --secondary-foreground: #e8f2d8;
   --muted: #28382b;
   --muted-foreground: #9bb08f;
   --border: #3f5a42;
+  --input: #5d835f;
+  --ring: #79AE6F;
   --accent: #314633;
   --accent-foreground: #e8f2d8;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
   --card: #253626;
   --section-alt: #283a2a;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
