@@ -45,7 +45,7 @@ export function getToolPageContent(path: string): string {
 <p>${base} ${byLength}</p>`,
 
     '/wordle': `<p>Wordle helper: daily tips, strategy, and 5-letter word suggestions. Use green/yellow/gray clues with our <a href="/wordle-solver" class="text-primary hover:underline">Wordle Solver</a> for the best next guess. ${gameLinks}</p>
-<p>${base} Browse <a href="/words/5-letter-words" class="text-primary hover:underline">5-letter words</a> by length. ${byLength}</p>`,
+<p>${base} Browse <a href="/five-letter-words" class="text-primary hover:underline">5-letter words</a> by length. ${byLength}</p>`,
 
     '/wordscapes': `<p>Wordscapes help: find words for daily levels and puzzles. Enter your letters and use our word finder to complete levels faster. ${gameLinks}</p>
 <p>${base} ${byLength}</p>`,

@@ -78,15 +78,15 @@ export const wordLists = [
 ];
 
 export const wordsByLength = [
-  { name: '10-Letter Words', href: '/10-letter-words' },
-  { name: '9-Letter Words', href: '/9-letter-words' },
-  { name: '8-Letter Words', href: '/8-letter-words' },
-  { name: '7-Letter Words', href: '/7-letter-words' },
-  { name: '6-Letter Words', href: '/6-letter-words' },
-  { name: '5-Letter Words', href: '/5-letter-words' },
-  { name: '4-Letter Words', href: '/4-letter-words' },
-  { name: '3-Letter Words', href: '/3-letter-words' },
-  { name: '2-Letter Words', href: '/2-letter-words' },
+  { name: '10-Letter Words', href: '/ten-letter-words' },
+  { name: '9-Letter Words', href: '/nine-letter-words' },
+  { name: '8-Letter Words', href: '/eight-letter-words' },
+  { name: '7-Letter Words', href: '/seven-letter-words' },
+  { name: '6-Letter Words', href: '/six-letter-words' },
+  { name: '5-Letter Words', href: '/five-letter-words' },
+  { name: '4-Letter Words', href: '/four-letter-words' },
+  { name: '3-Letter Words', href: '/three-letter-words' },
+  { name: '2-Letter Words', href: '/two-letter-words' },
 ];
 
 export const legal = [

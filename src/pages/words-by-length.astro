@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getMeta } from '@/lib/meta';
+import { getLengthPath } from '@/lib/length-slugs';
 import InternalLinks from '@/components/InternalLinks.astro';
 
 const meta = getMeta(
@@ -35,7 +36,7 @@ const lengthsData = [
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {lengthsData.map((item) => (
         <a
-          href={`/${item.length}-letter-words`}
+          href={getLengthPath(item.length)}
           class="p-5 rounded-lg border border-border bg-card hover:bg-muted transition-colors block text-left group"
         >
           <span class="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">{item.title}</span>
@@ -70,29 +71,29 @@ const lengthsData = [
     <div class="grid gap-4 sm:grid-cols-2">
       <div>
         <h3 class="font-semibold mb-2 text-foreground">Best for Wordle</h3>
-        <a href="/5-letter-words" class="text-primary hover:underline">5-Letter Words</a>
+        <a href="/five-letter-words" class="text-primary hover:underline">5-Letter Words</a>
         <p class="text-xs text-muted-foreground mt-1">Valid Wordle words</p>
       </div>
       <div>
         <h3 class="font-semibold mb-2 text-foreground">Best for Scrabble</h3>
-        <a href="/7-letter-words" class="text-primary hover:underline">7-Letter Words</a>
+        <a href="/seven-letter-words" class="text-primary hover:underline">7-Letter Words</a>
         <p class="text-xs text-muted-foreground mt-1">Bingo words for bonus points</p>
       </div>
       <div>
         <h3 class="font-semibold mb-2 text-foreground">Short Words</h3>
         <span class="flex flex-wrap gap-2">
-          <a href="/2-letter-words" class="text-primary hover:underline">2-Letter</a>
-          <a href="/3-letter-words" class="text-primary hover:underline">3-Letter</a>
-          <a href="/4-letter-words" class="text-primary hover:underline">4-Letter</a>
+          <a href="/two-letter-words" class="text-primary hover:underline">2-Letter</a>
+          <a href="/three-letter-words" class="text-primary hover:underline">3-Letter</a>
+          <a href="/four-letter-words" class="text-primary hover:underline">4-Letter</a>
         </span>
         <p class="text-xs text-muted-foreground mt-1">Quick plays</p>
       </div>
       <div>
         <h3 class="font-semibold mb-2 text-foreground">Long Words</h3>
         <span class="flex flex-wrap gap-2">
-          <a href="/8-letter-words" class="text-primary hover:underline">8-Letter</a>
-          <a href="/9-letter-words" class="text-primary hover:underline">9-Letter</a>
-          <a href="/10-letter-words" class="text-primary hover:underline">10-Letter</a>
+          <a href="/eight-letter-words" class="text-primary hover:underline">8-Letter</a>
+          <a href="/nine-letter-words" class="text-primary hover:underline">9-Letter</a>
+          <a href="/ten-letter-words" class="text-primary hover:underline">10-Letter</a>
         </span>
         <p class="text-xs text-muted-foreground mt-1">High-scoring</p>
       </div>

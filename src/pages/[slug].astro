@@ -7,6 +7,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { getMeta } from '@/lib/meta';
 import { getWordsByLength } from '@/lib/words-data';
+import { getLengthPath } from '@/lib/length-slugs';
 
 export function getStaticPaths() {
   const lengths = [2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -39,7 +40,7 @@ const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 <Layout meta={meta}>
   <nav class="mb-6">
-    <a href={`/${length}-letter-words`} class="text-sm text-muted-foreground hover:text-primary">← {length} Letter Words</a>
+    <a href={getLengthPath(length)} class="text-sm text-muted-foreground hover:text-primary">&larr; {length} Letter Words</a>
   </nav>
 
   <header class="mb-8">

@@ -5,6 +5,51 @@
   "installCommand": "npm install",
   "redirects": [
     {
+      "source": "/10-letter-words",
+      "destination": "https://lettersolver.net/ten-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/9-letter-words",
+      "destination": "https://lettersolver.net/nine-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/8-letter-words",
+      "destination": "https://lettersolver.net/eight-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/7-letter-words",
+      "destination": "https://lettersolver.net/seven-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/6-letter-words",
+      "destination": "https://lettersolver.net/six-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/5-letter-words",
+      "destination": "https://lettersolver.net/five-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/4-letter-words",
+      "destination": "https://lettersolver.net/four-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/3-letter-words",
+      "destination": "https://lettersolver.net/three-letter-words",
+      "permanent": true
+    },
+    {
+      "source": "/2-letter-words",
+      "destination": "https://lettersolver.net/two-letter-words",
+      "permanent": true
+    },
+    {
       "source": "/sitemap-0.xml",
       "destination": "https://lettersolver.net/sitemap.xml",
       "permanent": true
