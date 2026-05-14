@@ -1,6 +1,6 @@
 {
-  "name": "Word Unscrambler - Solve Word Games Fast",
-  "short_name": "Word Unscrambler",
+  "name": "Letter Solver - Solve Word Games Fast",
+  "short_name": "Letter Solver",
   "description": "Free word unscrambler & anagram solver for Wordle, Scrabble, Words with Friends",
   "start_url": "/",
   "display": "standalone",
@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon-logo.png",
-      "sizes": "512x512",
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/site-logo.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -34,8 +34,8 @@
       "url": "/word-unscrambler",
       "icons": [
         {
-          "src": "/favicon-logo.png",
-          "sizes": "512x512",
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
@@ -47,8 +47,8 @@
       "url": "/wordle-solver",
       "icons": [
         {
-          "src": "/favicon-logo.png",
-          "sizes": "512x512",
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]

@@ -25,7 +25,7 @@ const {
   twitterSite = "@wordunscrambler",
 } = Astro.props;
 
-const fullTitle = title.includes("|") ? title : `${title} | Word Unscrambler`;
+const fullTitle = title.includes("|") ? title : `${title} | Letter Solver`;
 const origin = canonical.startsWith("http") ? new URL(canonical).origin : SITE;
 const resolvedOgImage = ogImage ?? `${origin}${ASSET_PATHS.ogImage}`;
 ---
@@ -45,7 +45,9 @@ const resolvedOgImage = ogImage ?? `${origin}${ASSET_PATHS.ogImage}`;
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
 </noscript>
 <link rel="preload" as="image" href={ASSET_PATHS.siteLogo} fetchpriority="high" />
-<link rel="icon" type="image/png" href={ASSET_PATHS.icon} fetchpriority="low" />
+<link rel="icon" href={ASSET_PATHS.icon} sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href={ASSET_PATHS.icon32} />
+<link rel="icon" type="image/png" sizes="16x16" href={ASSET_PATHS.icon16} />
 <link rel="apple-touch-icon" href={ASSET_PATHS.appleTouchIcon} />
 <link rel="manifest" href="/manifest.json" />
 <title>{fullTitle}</title>
@@ -57,7 +59,7 @@ const resolvedOgImage = ogImage ?? `${origin}${ASSET_PATHS.ogImage}`;
 
 <!-- Open Graph -->
 <meta property="og:type" content={ogType} />
-<meta property="og:site_name" content="Word Unscrambler" />
+<meta property="og:site_name" content="Letter Solver" />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />

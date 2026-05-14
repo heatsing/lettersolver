@@ -7,10 +7,10 @@ export function getOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${BASE}/#organization`,
-    name: 'Word Unscrambler',
+    name: 'Letter Solver',
     url: BASE,
     logo: `${BASE}${ASSET_PATHS.ogImage}`,
-    description: 'Free word unscrambler & anagram solver for Wordle, Scrabble, Words with Friends.',
+    description: 'Free letter solver, word unscrambler & anagram solver for Wordle, Scrabble, Words with Friends.',
     sameAs: [],
   };
 }
@@ -19,9 +19,9 @@ export function getWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Word Unscrambler',
+    name: 'Letter Solver',
     url: BASE,
-    description: 'Free word unscrambler & anagram solver for Wordle, Scrabble, Words with Friends.',
+    description: 'Free letter solver, word unscrambler & anagram solver for Wordle, Scrabble, Words with Friends.',
     inLanguage: 'en-US',
     publisher: { '@id': `${BASE}/#organization` },
     potentialAction: {
@@ -36,7 +36,7 @@ export function getSoftwareApplicationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Word Unscrambler',
+    name: 'Letter Solver',
     applicationCategory: 'GameApplication',
     operatingSystem: 'Any',
     url: `${BASE}/unscramble`,
