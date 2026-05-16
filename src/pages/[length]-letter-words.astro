@@ -155,88 +155,123 @@ const wordFindersList = [...dailyGameHints, ...wordFinders];
       </section>
 
       {length === 10 ? (
-        <article class="prose prose-slate max-w-none mb-8 text-foreground">
-          <h2>The WordVault Guide to 10-Letter Words</h2>
-          <p>
-            Step into the arena of 10-letter words, where vocabulary becomes a secret weapon and every extra letter feels like unlocking a treasure chest full of points. Whether you're chasing victory in Scrabble, dominating Words With Friends, or flexing your brainpower in word puzzles, mastering longer words can completely change your game.
-          </p>
-          <p>
-            At WordVault, you can uncover powerful word combinations, expand your vocabulary, and discover hidden gems that turn ordinary plays into scoreboard explosions. From elegant dictionary words to unusual high-scoring terms, the world of ten-letter words is much bigger than most players expect.
-          </p>
-          <p>
-            And the best part? Some of these words appear in everyday conversation more often than you realize.
-          </p>
+        <article class="mb-10 space-y-8 text-foreground">
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-foreground mb-4">The WordVault Guide to 10-Letter Words</h2>
+            <div class="space-y-4 text-base leading-7 text-muted-foreground">
+              <p>
+                Step into the arena of 10-letter words, where vocabulary becomes a secret weapon and every extra letter feels like unlocking a treasure chest full of points. Whether you're chasing victory in Scrabble, dominating Words With Friends, or flexing your brainpower in word puzzles, mastering longer words can completely change your game.
+              </p>
+              <p>
+                At WordVault, you can uncover powerful word combinations, expand your vocabulary, and discover hidden gems that turn ordinary plays into scoreboard explosions. From elegant dictionary words to unusual high-scoring terms, the world of ten-letter words is much bigger than most players expect.
+              </p>
+              <p>
+                And the best part? Some of these words appear in everyday conversation more often than you realize.
+              </p>
+            </div>
+          </section>
 
-          <h2>The Most Popular 10-Letter Words</h2>
-          <p>
-            Long words may look intimidating at first glance, but many are surprisingly familiar. Here are some commonly used 10-letter words you've probably seen before:
-          </p>
-          <ul>
-            <li>Strawberry</li>
-            <li>Friendship</li>
-            <li>Everything</li>
-            <li>Appreciate</li>
-            <li>Motivation</li>
-          </ul>
-          <p>
-            These are just a small sample from the huge collection of ten-letter vocabulary used in daily life. Once you start noticing them, they appear everywhere like hidden linguistic constellations across books, games, and conversations.
-          </p>
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">The Most Popular 10-Letter Words</h2>
+            <p class="text-base leading-7 text-muted-foreground mb-4">
+              Long words may look intimidating at first glance, but many are surprisingly familiar. Here are some commonly used 10-letter words you've probably seen before:
+            </p>
+            <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 list-none pl-0 mb-4">
+              {['Strawberry', 'Friendship', 'Everything', 'Appreciate', 'Motivation'].map((word) => (
+                <li class="rounded-md border border-border bg-background px-4 py-3 font-semibold text-foreground">
+                  {word}
+                </li>
+              ))}
+            </ul>
+            <p class="text-base leading-7 text-muted-foreground">
+              These are just a small sample from the huge collection of ten-letter vocabulary used in daily life. Once you start noticing them, they appear everywhere like hidden linguistic constellations across books, games, and conversations.
+            </p>
+          </section>
 
-          <h2>Why Learn 10-Letter Words?</h2>
-          <p>
-            Building your knowledge of longer words isn't just about games. It sharpens spelling skills, improves communication, and boosts pattern recognition. In word games specifically, longer words can:
-          </p>
-          <ul>
-            <li>Earn massive bonus points</li>
-            <li>Open difficult board positions</li>
-            <li>Impress opponents</li>
-            <li>Increase your win rate dramatically</li>
-            <li>Expand your overall vocabulary</li>
-          </ul>
-          <p>
-            A single well-placed 10-letter word can flip an entire match upside down like a verbal checkmate.
-          </p>
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">Why Learn 10-Letter Words?</h2>
+            <p class="text-base leading-7 text-muted-foreground mb-4">
+              Building your knowledge of longer words isn't just about games. It sharpens spelling skills, improves communication, and boosts pattern recognition. In word games specifically, longer words can:
+            </p>
+            <ul class="grid gap-3 sm:grid-cols-2 list-none pl-0 mb-4">
+              {[
+                'Earn massive bonus points',
+                'Open difficult board positions',
+                'Impress opponents',
+                'Increase your win rate dramatically',
+                'Expand your overall vocabulary',
+              ].map((benefit) => (
+                <li class="flex gap-3 rounded-md bg-muted px-4 py-3 text-sm font-medium text-foreground">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true"></span>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-base leading-7 text-muted-foreground">
+              A single well-placed 10-letter word can flip an entire match upside down like a verbal checkmate.
+            </p>
+          </section>
 
-          <h2>High-Scoring 10-Letter Words in Scrabble</h2>
-          <p>
-            Some ten-letter words are legendary among word game enthusiasts because of their massive point value.
-          </p>
-          <p>A few famous examples include:</p>
-          <ul>
-            <li>RAZZMATAZZ</li>
-            <li>DIZZYINGLY</li>
-            <li>MAXIMIZING</li>
-          </ul>
-          <p>
-            These words combine rare high-value letters like Z, X, and Y, creating explosive scoring opportunities. Competitive Scrabble players constantly search for these rare combinations because one perfect move can instantly change the outcome of the game.
-          </p>
-          <p>
-            One of the most famous tournament plays involved the word CAZIQUES, which achieved an extraordinary score during championship competition.
-          </p>
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">High-Scoring 10-Letter Words in Scrabble</h2>
+            <div class="space-y-4 text-base leading-7 text-muted-foreground">
+              <p>Some ten-letter words are legendary among word game enthusiasts because of their massive point value.</p>
+              <p>A few famous examples include:</p>
+            </div>
+            <ul class="my-4 grid gap-2 sm:grid-cols-3 list-none pl-0">
+              {['RAZZMATAZZ', 'DIZZYINGLY', 'MAXIMIZING'].map((word) => (
+                <li class="rounded-md border border-primary/30 bg-primary/10 px-4 py-3 text-center font-bold tracking-wide text-primary">
+                  {word}
+                </li>
+              ))}
+            </ul>
+            <div class="space-y-4 text-base leading-7 text-muted-foreground">
+              <p>
+                These words combine rare high-value letters like Z, X, and Y, creating explosive scoring opportunities. Competitive Scrabble players constantly search for these rare combinations because one perfect move can instantly change the outcome of the game.
+              </p>
+              <p>
+                One of the most famous tournament plays involved the word CAZIQUES, which achieved an extraordinary score during championship competition.
+              </p>
+            </div>
+          </section>
 
-          <h2>Top 10-Letter Words in Words With Friends</h2>
-          <p>
-            Words With Friends allows a broader dictionary than traditional Scrabble, which means even more creative possibilities appear.
-          </p>
-          <p>Some standout high-scoring examples include:</p>
-          <ul>
-            <li>RAZZMATAZZ</li>
-            <li>VAJAZZLING</li>
-            <li>JAZZERCISE</li>
-          </ul>
-          <p>
-            The inclusion of unusual modern vocabulary gives WWF players extra opportunities to surprise opponents with quirky and stylish word choices.
-          </p>
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">Top 10-Letter Words in Words With Friends</h2>
+            <div class="space-y-4 text-base leading-7 text-muted-foreground">
+              <p>
+                Words With Friends allows a broader dictionary than traditional Scrabble, which means even more creative possibilities appear.
+              </p>
+              <p>Some standout high-scoring examples include:</p>
+            </div>
+            <ul class="my-4 grid gap-2 sm:grid-cols-3 list-none pl-0">
+              {['RAZZMATAZZ', 'VAJAZZLING', 'JAZZERCISE'].map((word) => (
+                <li class="rounded-md border border-border bg-background px-4 py-3 text-center font-bold tracking-wide text-foreground">
+                  {word}
+                </li>
+              ))}
+            </ul>
+            <p class="text-base leading-7 text-muted-foreground">
+              The inclusion of unusual modern vocabulary gives WWF players extra opportunities to surprise opponents with quirky and stylish word choices.
+            </p>
+          </section>
 
-          <h2>Frequently Asked Questions</h2>
-          <h3>How many 10-letter words exist?</h3>
-          <p>
-            The English language contains roughly 35,000 ten-letter words, though the exact number varies depending on the dictionary being used. Word games often use smaller approved word lists, meaning not every dictionary word is playable.
-          </p>
-          <h3>Are 10-letter words difficult to memorize?</h3>
-          <p>
-            Not necessarily. Many are already part of normal daily vocabulary. Once you begin practicing word patterns and prefixes, longer words become much easier to recognize.
-          </p>
+          <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              <div class="rounded-md border border-border bg-background p-4">
+                <h3 class="text-base font-semibold text-foreground mb-2">How many 10-letter words exist?</h3>
+                <p class="text-sm sm:text-base leading-7 text-muted-foreground">
+                  The English language contains roughly 35,000 ten-letter words, though the exact number varies depending on the dictionary being used. Word games often use smaller approved word lists, meaning not every dictionary word is playable.
+                </p>
+              </div>
+              <div class="rounded-md border border-border bg-background p-4">
+                <h3 class="text-base font-semibold text-foreground mb-2">Are 10-letter words difficult to memorize?</h3>
+                <p class="text-sm sm:text-base leading-7 text-muted-foreground">
+                  Not necessarily. Many are already part of normal daily vocabulary. Once you begin practicing word patterns and prefixes, longer words become much easier to recognize.
+                </p>
+              </div>
+            </div>
+          </section>
         </article>
       ) : (
         <section class="mb-8">
