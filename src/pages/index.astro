@@ -2,11 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import WordsStartWithTool from '@/components/WordsStartWithTool';
 import { getMeta, DEFAULT_TITLE, DEFAULT_DESCRIPTION } from '@/lib/meta';
-import {
-  headerWordSolvers,
-  headerWordLists,
-  headerCrosswords,
-} from '@/lib/nav-links';
+import { headerWordSolvers } from '@/lib/nav-links';
 
 const meta = getMeta('/', DEFAULT_TITLE, DEFAULT_DESCRIPTION);
 
@@ -136,29 +132,6 @@ const dailyHintsWithMeta = [
       </div>
     </section>
 
-    <section class="home-section">
-      <div class="home-wrap">
-        <h2 class="home-h2">Crossword Clues</h2>
-        <ul class="clues-list">
-          <li><a href="/crossword-solver">Fabric used for casino tables</a></li>
-          <li><a href="/crossword-solver">Togetherness</a></li>
-          <li><a href="/crossword-solver">Basic belief</a></li>
-          <li><a href="/crossword-solver">Romantic rendezvous</a></li>
-          <li><a href="/crossword-solver">Whac-A-___ (classic arcade game)</a></li>
-          <li><a href="/crossword-solver">Dog breed favored by Queen Elizabeth II</a></li>
-        </ul>
-        <div class="mini-columns">
-          <div>
-            <h3>Word Lists</h3>
-            <ul>{headerWordLists.map((l) => <li><a href={l.href}>{l.name}</a></li>)}</ul>
-          </div>
-          <div>
-            <h3>Crosswords</h3>
-            <ul>{headerCrosswords.map((l) => <li><a href={l.href}>{l.name}</a></li>)}</ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 
 </Layout>
@@ -212,12 +185,12 @@ const dailyHintsWithMeta = [
     gap: 0.65rem;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
-  .home-link-grid a, .clues-list a, .mini-columns a {
+  .home-link-grid a {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
   }
-  .home-link-grid a:hover, .clues-list a:hover, .mini-columns a:hover { text-decoration: underline; }
+  .home-link-grid a:hover { text-decoration: underline; }
   .card-grid {
     display: grid;
     gap: 1rem;
@@ -275,13 +248,4 @@ const dailyHintsWithMeta = [
     font-style: normal;
     margin-top: 0.25rem;
   }
-  .clues-list { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.55rem; }
-  .mini-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1rem;
-    margin-top: 1.3rem;
-  }
-  .mini-columns h3 { margin: 0 0 0.4rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  .mini-columns ul { margin: 0; padding-left: 1rem; display: grid; gap: 0.45rem; }
 </style>
