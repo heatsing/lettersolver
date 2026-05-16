@@ -197,9 +197,15 @@ const guide = lengthGuides[length];
     <div class="md:col-start-2 md:row-start-1 min-w-0 w-full" role="region" aria-label="Main content: SEO text and word list">
       <header class="mb-6">
         <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-3">{length} Letter Words</h1>
-        <p class="text-muted-foreground leading-relaxed max-w-2xl">
-          Word games like Words with Friends, Scrabble, and Wordle are more popular than ever. {length}-letter words are a great fit for daily puzzles and board games. Browse the full list below or use the word finder on the left to search by letters and filters.
-        </p>
+        <div class="max-w-3xl space-y-4 text-base leading-7 text-muted-foreground">
+          <h2 class="text-xl sm:text-2xl font-bold text-foreground">About {length}-Letter Words</h2>
+          <p>
+            At WordSphere, we make it easy to turn scrambled letters into powerful {length}-letter words for your favorite word games. Whether you're playing Scrabble, Words With Friends, or solving word puzzles, our word finder helps you discover high-scoring words in seconds.
+          </p>
+          <p>
+            Find stronger plays, improve your vocabulary, and make the most of every turn. From common words to advanced combinations, you'll always have more possibilities at your fingertips.
+          </p>
+        </div>
       </header>
 
       <section class="mb-8" aria-labelledby="word-list-heading">
@@ -240,18 +246,6 @@ const guide = lengthGuides[length];
       </section>
 
       <article class="mb-10 space-y-8 text-foreground">
-        <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
-          <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">About {length}-Letter Words</h2>
-          <div class="space-y-4 text-base leading-7 text-muted-foreground">
-            <p>
-              At WordSphere, we make it easy to turn scrambled letters into powerful {length}-letter words for your favorite word games. Whether you're playing Scrabble, Words With Friends, or solving word puzzles, our word finder helps you discover high-scoring words in seconds.
-            </p>
-            <p>
-              Find stronger plays, improve your vocabulary, and make the most of every turn. From common words to advanced combinations, you'll always have more possibilities at your fingertips.
-            </p>
-          </div>
-        </section>
-
         <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
           <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">The WordVault Guide to {length}-Letter Words</h2>
           <div class="space-y-4 text-base leading-7 text-muted-foreground">
