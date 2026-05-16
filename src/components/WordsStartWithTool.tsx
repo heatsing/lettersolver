@@ -87,8 +87,8 @@ export default function WordsStartWithTool() {
     }
 
     const lenParsed = lengthStr.trim() === "" ? null : parseInt(lengthStr, 10);
-    if (lenParsed !== null && (lenParsed < 2 || lenParsed > 10 || Number.isNaN(lenParsed))) {
-      setError("Length must be between 2 and 10, or leave blank for all lengths.");
+    if (lenParsed !== null && (lenParsed < 2 || lenParsed > 15 || Number.isNaN(lenParsed))) {
+      setError("Length must be between 2 and 15, or leave blank for all lengths.");
       return;
     }
 
@@ -104,7 +104,7 @@ export default function WordsStartWithTool() {
       const lengths =
         lenParsed !== null
           ? [lenParsed]
-          : [5, 6, 7, 4, 8, 3, 9, 2, 10];
+          : [5, 6, 7, 4, 8, 3, 9, 2, 10, 11, 12, 13, 14, 15];
 
       const wordLists = await Promise.all(lengths.map((n) => loadWordsByLength(n, dictMode)));
       const merged: string[] = wordLists.flat();
@@ -240,7 +240,7 @@ export default function WordsStartWithTool() {
           <label className="wst-field">
             <span className="wst-field-label">
               Length
-              <HintIcon label="Exact word length 2–10, or leave blank for all" />
+              <HintIcon label="Exact word length 2-15, or leave blank for all" />
             </span>
             <input
               type="text"

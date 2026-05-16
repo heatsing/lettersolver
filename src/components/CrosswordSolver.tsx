@@ -62,7 +62,7 @@ export default function CrosswordSolver() {
   const [wordLength, setWordLength] = useState(5);
   const [copied, setCopied] = useState(false);
 
-  const lengthOptions = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const lengthOptions = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   const handleSolve = useCallback(async () => {
     const cleanPattern = pattern.toLowerCase().replace(/[^a-z_]/g, "");
@@ -120,7 +120,7 @@ export default function CrosswordSolver() {
             onKeyDown={handlePatternKeyDown}
             className="input text-center text-2xl font-mono tracking-widest uppercase"
             placeholder="e.g. _A_E or CROS_"
-            maxLength={10}
+            maxLength={15}
             autoComplete="off"
           />
           <p className="tool-helper-text text-xs text-muted-foreground text-center mt-2">

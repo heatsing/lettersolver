@@ -90,8 +90,8 @@ export default function NYTCrossplaySolver() {
     }
 
     const lenParsed = lengthStr.trim() === "" ? null : parseInt(lengthStr, 10);
-    if (lenParsed !== null && (lenParsed < 2 || lenParsed > 10 || Number.isNaN(lenParsed))) {
-      setError("Length must be between 2 and 10, or leave blank for all lengths.");
+    if (lenParsed !== null && (lenParsed < 2 || lenParsed > 15 || Number.isNaN(lenParsed))) {
+      setError("Length must be between 2 and 15, or leave blank for all lengths.");
       return;
     }
 
@@ -105,7 +105,7 @@ export default function NYTCrossplaySolver() {
       const lengths =
         lenParsed !== null
           ? [lenParsed]
-          : [5, 6, 7, 4, 8, 3, 9, 2, 10];
+          : [5, 6, 7, 4, 8, 3, 9, 2, 10, 11, 12, 13, 14, 15];
 
       const wordLists = await Promise.all(lengths.map((n) => loadWordsByLength(n, gameMode)));
       const merged: string[] = wordLists.flat();
@@ -215,7 +215,7 @@ export default function NYTCrossplaySolver() {
           <label className="crossplay-field">
             <span className="crossplay-field-label">
               Length
-              <HintIcon label="Exact word length (2–10), or leave blank to search all lengths" />
+              <HintIcon label="Exact word length (2-15), or leave blank to search all lengths" />
             </span>
             <input
               type="text"

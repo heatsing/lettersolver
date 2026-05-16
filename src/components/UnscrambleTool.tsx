@@ -3,7 +3,7 @@ import type { UnscrambleResult, UnscrambleOptions } from '@/lib/unscramble';
 import { unscramble } from '@/lib/unscramble';
 
 const MIN_LEN = 2;
-const MAX_LEN = 10;
+const MAX_LEN = 15;
 const LENGTHS = Array.from({ length: MAX_LEN - MIN_LEN + 1 }, (_, i) => i + MIN_LEN);
 
 function loadWordsByLength(len: number): Promise<string[]> {

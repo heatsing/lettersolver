@@ -6,7 +6,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 
 const DATA_DIR = join(process.cwd(), 'public', 'data');
-const LENGTHS = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+const LENGTHS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 type DictProfile = 'full' | 'common';
 
 let cachedAll: string[] | null = null;
@@ -23,13 +23,13 @@ function loadWordsByLength(length: number, profile: DictProfile = 'full'): strin
   }
 }
 
-/** Words for a given length (2–10). Used by [length]-letter-words pages. */
+/** Words for a given length (2-15). Used by word-list pages and tools. */
 export function getWordsByLength(length: number, profile: DictProfile = 'full'): string[] {
-  if (length < 2 || length > 10) return [];
+  if (length < 2 || length > 15) return [];
   return loadWordsByLength(length, profile).sort((a, b) => a.localeCompare(b));
 }
 
-/** All words from words_2..words_10, concatenated. Cached for reuse. */
+/** All words from words_2..words_15, concatenated. Cached for reuse. */
 export function getAllWords(profile: DictProfile = 'full'): string[] {
   if (profile === 'full' && cachedAll) return cachedAll;
   if (profile === 'common' && cachedAllCommon) return cachedAllCommon;
