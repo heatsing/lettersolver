@@ -192,12 +192,6 @@ const guide = lengthGuides[length];
           ))}
         </ul>
       </section>
-      <article class="rounded-lg border border-border bg-card p-4 text-muted-foreground leading-relaxed text-sm">
-        <h2 class="text-base font-semibold text-foreground mb-2">About {length}-letter words</h2>
-        <p>
-          <strong class="text-foreground">{length}-letter words</strong> are useful for Wordle, Scrabble, Words with Friends, and crosswords. Use the finder above or <a href="/unscramble" class="text-primary hover:underline">Unscramble</a> to find words from your letters.
-        </p>
-      </article>
     </aside>
 
     <div class="md:col-start-2 md:row-start-1 min-w-0 w-full" role="region" aria-label="Main content: SEO text and word list">
@@ -246,6 +240,13 @@ const guide = lengthGuides[length];
       </section>
 
       <article class="mb-10 space-y-8 text-foreground">
+        <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
+          <h2 class="text-xl sm:text-2xl font-bold text-foreground mb-3">About {length}-Letter Words</h2>
+          <p class="text-base leading-7 text-muted-foreground">
+            <strong class="font-semibold text-foreground">{length}-letter words</strong> are useful for Wordle, Scrabble, Words with Friends, and crosswords. Use the finder above or <a href="/unscramble" class="font-medium text-primary hover:underline">Unscramble</a> to find words from your letters.
+          </p>
+        </section>
+
         <section class="rounded-lg border border-border bg-card p-5 sm:p-6">
           <h2 class="text-2xl sm:text-3xl font-bold text-foreground mb-4">The WordVault Guide to {length}-Letter Words</h2>
           <div class="space-y-4 text-base leading-7 text-muted-foreground">
