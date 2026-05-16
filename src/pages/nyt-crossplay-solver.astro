@@ -47,12 +47,52 @@ const faqs = [
     <section class="crossplay-seo" aria-labelledby="crossplay-help-heading">
       <div class="crossplay-seo-inner">
         <div class="crossplay-content-layout">
-          <aside class="crossplay-content-nav" aria-label="NYT Crossplay solver guide">
-            <a href="#crossplay-help-heading">How to use this solver</a>
-            <a href="#crossplay-filters">Match the board</a>
-            <a href="#crossplay-results">Read the results</a>
-            <a href="#crossplay-faq-heading">Frequently asked questions</a>
-            <a href="#crossplay-related">Related word tools</a>
+          <aside class="tool-main-sidebar crossplay-content-nav" aria-label="Word tools navigation">
+            <section class="tool-side-card" aria-label="Word Finders">
+              <h3 class="tool-side-title">Word Finders</h3>
+              <ul class="tool-side-links">
+                <li><a href="/wordle">Wordle</a></li>
+                <li><a href="/anagram-solver">Anagram Solver</a></li>
+                <li><a href="/jumble-solver">Jumble Solver</a></li>
+                <li><a href="/scrabble-go">Scrabble Go Word Finder</a></li>
+                <li><a href="/scrabble">Scrabble Word Finder</a></li>
+                <li><a href="/scrabble-cheat">Scrabble® and Scrabble® Go Cheat</a></li>
+                <li><a href="/unscramble">Unscramble Words</a></li>
+                <li><a href="/word-cookies">Word Cookies Cheat</a></li>
+                <li><a href="/descrambler">Word Descrambler</a></li>
+                <li><a href="/word-finder">Word Finder</a></li>
+                <li><a href="/word-generator">Word Generator</a></li>
+                <li><a href="/word-scramble">Word Scramble</a></li>
+                <li><a href="/word-solver">Word Solver</a></li>
+                <li><a href="/word-unscrambler">Word Unscrambler</a></li>
+                <li><a href="/wordfeud">Wordfeud Cheat</a></li>
+                <li><a href="/wordle-solver">Wordle Solver</a></li>
+                <li><a href="/words-with-friends">Words with Friends Help</a></li>
+                <li><a href="/wordscapes">Wordscapes Cheats and Answers</a></li>
+              </ul>
+            </section>
+            <section class="tool-side-card" aria-label="List of Words">
+              <h3 class="tool-side-title">List of Words</h3>
+              <ul class="tool-side-links">
+                <li><a href="/words-by-length">words by length</a></li>
+                <li><a href="/words-start-with">words start with</a></li>
+                <li><a href="/words-with-letters">words with letters</a></li>
+              </ul>
+            </section>
+            <section class="tool-side-card" aria-label="Words by Length">
+              <h3 class="tool-side-title">Words by Length</h3>
+              <ul class="tool-side-links">
+                <li><a href="/ten-letter-words">10-Letter Words</a></li>
+                <li><a href="/nine-letter-words">9-Letter Words</a></li>
+                <li><a href="/eight-letter-words">8-Letter Words</a></li>
+                <li><a href="/seven-letter-words">7-Letter Words</a></li>
+                <li><a href="/six-letter-words">6-Letter Words</a></li>
+                <li><a href="/five-letter-words">5-Letter Words</a></li>
+                <li><a href="/four-letter-words">4-Letter Words</a></li>
+                <li><a href="/three-letter-words">3-Letter Words</a></li>
+                <li><a href="/two-letter-words">2-Letter Words</a></li>
+              </ul>
+            </section>
           </aside>
 
           <article class="crossplay-content-article">
@@ -169,25 +209,7 @@ const faqs = [
     align-items: start;
   }
   .crossplay-content-nav {
-    position: sticky;
     top: 5rem;
-    display: grid;
-    gap: 0.2rem;
-    border-left: 3px solid var(--border);
-    padding-left: 1rem;
-  }
-  .crossplay-content-nav a {
-    border-radius: 0.45rem;
-    color: var(--muted-foreground);
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.35;
-    padding: 0.55rem 0.65rem;
-    text-decoration: none;
-  }
-  .crossplay-content-nav a:hover {
-    background: var(--muted);
-    color: var(--foreground);
   }
   .crossplay-content-article {
     min-width: 0;
@@ -237,19 +259,6 @@ const faqs = [
     }
     .crossplay-content-nav {
       position: static;
-      border-left: 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 0.35rem;
-      overflow-x: auto;
-      padding: 0 0 0.75rem;
-      scrollbar-width: thin;
-    }
-    .crossplay-content-nav a {
-      flex: 0 0 auto;
-      background: var(--card);
-      border: 1px solid var(--border);
-      white-space: nowrap;
     }
   }
 </style>
