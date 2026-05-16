@@ -46,20 +46,54 @@ const faqs = [
 
     <section class="crossplay-seo" aria-labelledby="crossplay-help-heading">
       <div class="crossplay-seo-inner">
-        <h2 id="crossplay-help-heading" class="crossplay-seo-h2">How to use this solver</h2>
-        <p class="crossplay-seo-p">
-          Type the letters on your rack in the main field. Add <strong>?</strong> or spaces for blank tiles (up to three). Use the advanced filters to match the board: prefix, suffix, a required substring, or exact length. Choose <strong>NYT Crossplay</strong> in the dropdown, then press <strong>SEARCH</strong>. Words are sorted by Scrabble-style point value so strong plays appear first.
-        </p>
-        <h3 class="crossplay-seo-h3">Frequently asked questions</h3>
-        <div class="crossplay-faq">
-          {faqs.map((f) => (
-            <div class="crossplay-faq-pair">
-              <h4 class="crossplay-faq-q">{f.question}</h4>
-              <p class="crossplay-faq-a" set:html={f.answer} />
-            </div>
-          ))}
+        <div class="crossplay-content-layout">
+          <aside class="crossplay-content-nav" aria-label="NYT Crossplay solver guide">
+            <a href="#crossplay-help-heading">How to use this solver</a>
+            <a href="#crossplay-filters">Match the board</a>
+            <a href="#crossplay-results">Read the results</a>
+            <a href="#crossplay-faq-heading">Frequently asked questions</a>
+            <a href="#crossplay-related">Related word tools</a>
+          </aside>
+
+          <article class="crossplay-content-article">
+            <section class="crossplay-copy-block">
+              <h2 id="crossplay-help-heading" class="crossplay-seo-h2">How to use this solver</h2>
+              <p class="crossplay-seo-p">
+                Type the letters on your rack in the main field. Add <strong>?</strong> or spaces for blank tiles (up to three). Choose <strong>NYT Crossplay</strong> in the dropdown, then press <strong>SEARCH</strong>. The solver checks your letters against the dictionary and returns playable words sorted by Scrabble-style point value.
+              </p>
+            </section>
+
+            <section id="crossplay-filters" class="crossplay-copy-block">
+              <h3 class="crossplay-seo-h3">Match the board</h3>
+              <p class="crossplay-seo-p">
+                Use the advanced filters when the board already gives you a pattern. <strong>Starts</strong> finds words with a required prefix, <strong>Ends</strong> finds words with a suffix, <strong>Contains</strong> keeps only words with specific letters together, and <strong>Length</strong> limits results to the exact word size you need.
+              </p>
+            </section>
+
+            <section id="crossplay-results" class="crossplay-copy-block">
+              <h3 class="crossplay-seo-h3">Read the results</h3>
+              <p class="crossplay-seo-p">
+                Scan the highest-scoring words first, then check which ones fit your board space. If the list is too broad, add a known letter, set a word length, or replace an uncertain tile with a wildcard to explore more options without starting over.
+              </p>
+            </section>
+
+            <section class="crossplay-copy-block" aria-labelledby="crossplay-faq-heading">
+              <h3 id="crossplay-faq-heading" class="crossplay-seo-h3">Frequently asked questions</h3>
+              <div class="crossplay-faq">
+                {faqs.map((f) => (
+                  <div class="crossplay-faq-pair">
+                    <h4 class="crossplay-faq-q">{f.question}</h4>
+                    <p class="crossplay-faq-a" set:html={f.answer} />
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="crossplay-related" class="crossplay-copy-block">
+              <InternalLinks />
+            </section>
+          </article>
         </div>
-        <InternalLinks />
       </div>
     </section>
   </div>
@@ -128,13 +162,48 @@ const faqs = [
     max-width: 68rem;
     margin: 0 auto;
   }
+  .crossplay-content-layout {
+    display: grid;
+    grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+  .crossplay-content-nav {
+    position: sticky;
+    top: 5rem;
+    display: grid;
+    gap: 0.2rem;
+    border-left: 3px solid var(--border);
+    padding-left: 1rem;
+  }
+  .crossplay-content-nav a {
+    border-radius: 0.45rem;
+    color: var(--muted-foreground);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.35;
+    padding: 0.55rem 0.65rem;
+    text-decoration: none;
+  }
+  .crossplay-content-nav a:hover {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+  .crossplay-content-article {
+    min-width: 0;
+    display: grid;
+    gap: 1.35rem;
+  }
+  .crossplay-copy-block {
+    scroll-margin-top: 5.5rem;
+  }
   .crossplay-seo-h2 {
     font-size: 1.25rem;
     font-weight: 800;
     margin: 0 0 0.75rem;
   }
   .crossplay-seo-p {
-    margin: 0 0 1.5rem;
+    margin: 0;
     font-size: 0.9375rem;
     line-height: 1.65;
     color: var(--muted-foreground);
@@ -160,5 +229,27 @@ const faqs = [
     font-size: 0.875rem;
     line-height: 1.6;
     color: var(--muted-foreground);
+  }
+  @media (max-width: 760px) {
+    .crossplay-content-layout {
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+    }
+    .crossplay-content-nav {
+      position: static;
+      border-left: 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      padding: 0 0 0.75rem;
+      scrollbar-width: thin;
+    }
+    .crossplay-content-nav a {
+      flex: 0 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
   }
 </style>
