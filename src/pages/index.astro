@@ -148,7 +148,10 @@ const gameHelpers = [
 
     <section class="home-section alt">
       <div class="home-wrap">
-        <h2 class="home-h2">Popular Word Games Solvers & Helpers</h2>
+        <div class="section-heading centered">
+          <h2 class="home-h2">Popular Word Games Solvers & Helpers</h2>
+          <p class="home-muted">Quick links to every game solver, daily puzzle helper, and word-finding tool on Letter Solver.</p>
+        </div>
         <div class="card-grid">
           {gameHelpers.map((tool) => (
             <a class="game-card" href={tool.href}>
@@ -205,6 +208,19 @@ const gameHelpers = [
     font-weight: 800;
   }
   .home-muted { margin: 0 0 1rem; color: var(--muted-foreground); }
+  .section-heading {
+    margin-bottom: 1.25rem;
+  }
+  .section-heading.centered {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .section-heading .home-muted {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
   .home-link-grid {
     list-style: none;
     padding: 0;
