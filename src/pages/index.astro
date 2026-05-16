@@ -2,7 +2,6 @@
 import Layout from '@/layouts/Layout.astro';
 import WordsStartWithTool from '@/components/WordsStartWithTool';
 import { getMeta, DEFAULT_TITLE, DEFAULT_DESCRIPTION } from '@/lib/meta';
-import { headerWordSolvers } from '@/lib/nav-links';
 
 const meta = getMeta('/', DEFAULT_TITLE, DEFAULT_DESCRIPTION);
 
@@ -33,6 +32,28 @@ const dailyHintsWithMeta = [
   { name: 'Spelling Bee Answers', subtitle: 'Word list & pangrams', href: '/word-unscrambler', icon: '🐝' },
   { name: 'Contexto Answer', subtitle: 'Hints & secret word', href: '/word-finder', icon: '🧩' },
   { name: 'Capture Hints', subtitle: 'Step-by-step solutions', href: '/crossword-solver', icon: '🧭' },
+];
+
+const gameHelpers = [
+  { name: 'NYT Crossplay Solver', href: '/nyt-crossplay-solver', description: 'Find answers and options for NYT-style crossplay puzzles.' },
+  { name: 'Wordle Solver', href: '/wordle-solver', description: 'Narrow down Wordle guesses with green, yellow, and gray clues.' },
+  { name: 'Wordle', href: '/wordle', description: 'Daily Wordle help, hints, and word lists for five-letter puzzles.' },
+  { name: 'Play Wordle', href: '/play-wordle', description: 'Play a clean daily Wordle-style challenge on Letter Solver.' },
+  { name: 'Wordle Unlimited', href: '/wordle-unlimited', description: 'Practice unlimited five-letter Wordle games with fresh answers.' },
+  { name: 'Scrabble Word Finder', href: '/scrabble', description: 'Find high-scoring Scrabble words from your rack and board pattern.' },
+  { name: 'Scrabble Cheat', href: '/scrabble-cheat', description: 'Quick Scrabble help for valid plays, blanks, and scoring.' },
+  { name: 'Scrabble Go', href: '/scrabble-go', description: 'Solve Scrabble Go racks and spot stronger mobile plays.' },
+  { name: 'Words With Friends', href: '/words-with-friends', description: 'Find WWF words with useful rack and pattern support.' },
+  { name: 'Wordfeud', href: '/wordfeud', description: 'Build better Wordfeud plays from your available letters.' },
+  { name: 'Boggle Solver', href: '/boggle-solver', description: 'Enter a Boggle board and uncover every valid word path.' },
+  { name: 'Text Twist', href: '/text-twist', description: 'Unscramble Text Twist letters and find every hidden word.' },
+  { name: 'Wordscapes', href: '/wordscapes', description: 'Solve Wordscapes levels from wheel letters and patterns.' },
+  { name: 'Word Cookies', href: '/word-cookies', description: 'Find missing Word Cookies answers from your cookie letters.' },
+  { name: 'Jumble Solver', href: '/jumble-solver', description: 'Unscramble newspaper and mobile Jumble puzzle letters.' },
+  { name: 'Letter Boxed Solver', href: '/letter-boxed-solver', description: 'Solve NYT Letter Boxed with efficient word chains.' },
+  { name: 'Crossword Solver', href: '/crossword-solver', description: 'Search crossword answers by clue, length, and known letters.' },
+  { name: 'Word Search Solver', href: '/word-search-solver', description: 'Find hidden words in letter grids and word search puzzles.' },
+  { name: 'Hangman Solver', href: '/hangman-solver', description: 'Use known letters and blanks to solve Hangman words faster.' },
 ];
 ---
 
@@ -122,10 +143,10 @@ const dailyHintsWithMeta = [
       <div class="home-wrap">
         <h2 class="home-h2">Popular Word Games Solvers & Helpers</h2>
         <div class="card-grid">
-          {headerWordSolvers.map((tool) => (
+          {gameHelpers.map((tool) => (
             <a class="game-card" href={tool.href}>
               <h3>{tool.name}</h3>
-              <p>The ultimate helper to turn patterns into possibilities.</p>
+              <p>{tool.description}</p>
             </a>
           ))}
         </div>
