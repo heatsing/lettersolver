@@ -4,7 +4,6 @@ import {
   headerWordLists,
   headerDailyGameHints,
   headerDailyGameHintsMoreHref,
-  headerCrosswords,
 } from '../lib/nav-links';
 
 const rawPath = Astro.url.pathname;
@@ -127,26 +126,6 @@ function isActive(href: string): boolean {
         </div>
       </div>
 
-      <!-- Crosswords -->
-      <div class="wt-dd">
-        <button type="button" class="wt-dd-trigger" aria-expanded="false" aria-haspopup="true" id="dd-crosswords">
-          Crosswords
-          <svg class="wt-dd-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="wt-dd-panel wt-dd-panel--simple" role="menu" aria-labelledby="dd-crosswords">
-          <div class="wt-dd-caret" aria-hidden="true"></div>
-          <div class="wt-dd-body">
-            {headerCrosswords.map((link) => (
-              <a href={link.href} class:list={['wt-dd-link', { 'wt-dd-link--active': isActive(link.href) }]} role="menuitem">
-                <span>{link.name}</span>
-                {isActive(link.href) && (
-                  <svg class="wt-dd-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                )}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
     </nav>
 
     <button
@@ -201,10 +180,6 @@ function isActive(href: string): boolean {
       </a>
     ))}
     <a href={headerDailyGameHintsMoreHref} class="wt-mobile-a wt-mobile-more" data-close-drawer>View More</a>
-    <div class="wt-mobile-section">Crosswords</div>
-    {headerCrosswords.map((link) => (
-      <a href={link.href} class="wt-mobile-a" data-close-drawer>{link.name}</a>
-    ))}
     <div class="wt-mobile-section">Info</div>
     <a href="/about" class="wt-mobile-a" data-close-drawer>About</a>
     <a href="/contact" class="wt-mobile-a" data-close-drawer>Contact</a>

@@ -6,6 +6,7 @@ export const headerWordSolvers = [
   { name: 'Word Scramble Solver', href: '/word-scramble' },
   { name: 'Anagram Solver', href: '/anagram-solver' },
   { name: 'Scrabble Solver', href: '/scrabble' },
+  { name: 'Crossword Solver', href: '/crossword-solver' },
 ] as const;
 
 export const headerWordLists = [
@@ -34,11 +35,6 @@ export const headerDailyGameHints: HeaderDailyHint[] = [
 ];
 
 export const headerDailyGameHintsMoreHref = '/words-by-length';
-
-export const headerCrosswords = [
-  { name: 'Crossword Solver', href: '/crossword-solver' },
-  { name: 'Crossword Popular Clues', href: '/word-finder' },
-] as const;
 
 /** Nav link groups for header dropdowns and footer columns (matches original Next.js site). */
 export const wordFinders = [
