@@ -24,18 +24,6 @@ function isActive(href: string): boolean {
 <header class="wt-top-header">
   <div class="wt-top-header-inner">
     <div class="wt-bar-left">
-      <!-- Mobile: hamburger first (reference layout) -->
-      <button
-        type="button"
-        class="wt-bar-btn wt-bar-hamburger"
-        id="mobile-menu-btn"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-drawer"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-
       <a href="/" class="wt-bar-logo" aria-label="Letter Solver Home">
         <img
           src="/site-logo.png"
@@ -160,6 +148,17 @@ function isActive(href: string): boolean {
         </div>
       </div>
     </nav>
+
+    <button
+      type="button"
+      class="wt-bar-btn wt-bar-hamburger"
+      id="mobile-menu-btn"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
 
   </div>
 </header>
