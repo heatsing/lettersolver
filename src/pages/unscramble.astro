@@ -1,19 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import UnscrambleTool from '@/components/UnscrambleTool';
-import InternalLinks from '@/components/InternalLinks.astro';
 import SchemaOrg from '@/components/SchemaOrg.astro';
-import SeoSchemaBlocks from '@/components/SeoSchemaBlocks.astro';
 import { getMeta } from '@/lib/meta';
 import { getSoftwareApplicationSchema } from '@/lib/schema';
 
 const meta = getMeta('/unscramble', 'Unscramble Letters To Find Words | Letter Solver', 'Type your jumbled letters and get every valid word. Filter by length, sort by score or A–Z. Works for Wordle, Scrabble, and crosswords.');
 const appSchema = getSoftwareApplicationSchema();
-const faqs = [
-  { question: 'How does the unscramble tool work?', answer: 'Enter your letters in the box. The tool loads a word list by length and finds all valid words that can be formed from your letters. Results are sorted by Scrabble score by default.' },
-  { question: 'Can I use wildcards?', answer: 'The basic version uses only the letters you type. For wildcard support (e.g. ? for any letter), use our full Word Unscrambler tool.' },
-  { question: 'Is it free?', answer: 'Yes. The unscramble tool is free to use with no sign-up required.' },
-];
 ---
 
 <Layout meta={meta} fullBleed={true}>
@@ -31,38 +24,80 @@ const faqs = [
     </section>
 
     <div class="tool-content">
-      <div class="page-wrapper">
-        <h2 class="page-h2">Why Unscramble Words?</h2>
-        <div class="page-body">
-          <p>
-            Unscrambling improves pattern recognition and vocabulary. Our tool shows every possible word from your letters for
-            Wordle, Scrabble, and other word puzzles.
-          </p>
-          <p>
-            For advanced filters, try <a href="/word-unscrambler" class="text-primary hover:underline">Word Unscrambler</a> or
-            <a href="/anagram-solver" class="text-primary hover:underline"> Anagram Solver</a>.
-          </p>
-        </div>
+      <article class="page-wrapper space-y-9">
+        <section class="page-body">
+          <h2 class="page-h2">Unscramble Words</h2>
+          <p>Need help turning mixed-up letters into real words? Our Unscramble Words tool makes it simple to find possible word combinations from the letters you enter. Whether you're solving a word puzzle, playing Scrabble, competing in Words With Friends, or working through a daily crossword, this tool helps you discover answers faster.</p>
+          <p>Just type your available letters into the search box, choose a word length or pattern if needed, and instantly get a list of matching words. From short common words to longer high-scoring combinations, our word unscrambler gives you more ways to play smarter.</p>
+        </section>
 
-        <h2 class="page-h2">Frequently Asked Questions</h2>
-        <div class="space-y-3">
-          {faqs.map((faq) => (
-            <details class="faq-details">
-              <summary class="faq-summary">
-                <span class="font-semibold text-foreground text-[15px]">{faq.question}</span>
-                <span class="faq-icon">+</span>
-              </summary>
-              <div class="faq-body">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-        <InternalLinks />
-      </div>
+        <section class="page-body">
+          <h2 class="page-h2">What Is a Word Unscrambler?</h2>
+          <p>A word unscrambler is an online tool that rearranges scrambled letters into valid words. Instead of guessing every possible combination by yourself, the tool quickly checks your letters and shows words that can be made from them.</p>
+          <p>It is useful for:</p>
+          <ul>
+            <li>Scrabble</li>
+            <li>Words With Friends</li>
+            <li>Wordle-style games</li>
+            <li>Crossword puzzles</li>
+            <li>Anagram challenges</li>
+            <li>Word Cookies and other letter games</li>
+          </ul>
+          <p>Whether you want to solve a puzzle, improve your vocabulary, or find a better move in a word game, an unscrambler can save time and give you fresh word ideas.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">How To Use the Unscramble Tool</h2>
+          <p>Using our word unscrambler is quick and beginner-friendly.</p>
+          <h3 class="text-2xl font-bold text-foreground">Step 1: Enter Your Letters</h3>
+          <p>Type the scrambled letters you have into the input box. You can enter vowels, consonants, and even wildcard letters if your game allows them.</p>
+          <h3 class="text-2xl font-bold text-foreground">Step 2: Add Search Filters</h3>
+          <p>To get more accurate results, you can filter by word length, starting letters, ending letters, or specific letter patterns. This helps narrow the list when you already know part of the answer.</p>
+          <h3 class="text-2xl font-bold text-foreground">Step 3: Find Matching Words</h3>
+          <p>Click search, and the tool will instantly generate possible words from your letters. For example, entering <strong>CIUTJSE</strong> may return words like <strong>JUSTICE</strong>, <strong>JUICES</strong>, <strong>CUTIES</strong>, <strong>JESUIT</strong>, <strong>SUITE</strong>, and <strong>JEST</strong>.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Why Use an Unscramble Words Tool?</h2>
+          <p>Word games are fun, but difficult letter combinations can slow you down. A smart word unscrambler helps you move past tricky moments and uncover words you might miss on your own.</p>
+          <p>With this tool, you can:</p>
+          <ul>
+            <li>Find words from scrambled letters quickly</li>
+            <li>Discover high-scoring Scrabble words</li>
+            <li>Improve your Words With Friends strategy</li>
+            <li>Solve anagrams and crossword clues faster</li>
+            <li>Learn new words and spelling patterns</li>
+            <li>Make better use of wildcards and rare letters</li>
+          </ul>
+          <p>It is helpful for casual players, students, vocabulary learners, and competitive word game fans.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Unscramble Letters for Scrabble and Words With Friends</h2>
+          <p>If you play Scrabble or Words With Friends, every letter matters. Our unscramble letters tool helps you find playable words from your rack, including short tactical words and longer bonus opportunities.</p>
+          <p>You can use it to test different combinations, look for words with high-value letters like Q, Z, X, and J, or find words that fit a specific board pattern. Instead of staring at your tiles hoping a word appears, you can quickly explore better options.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Build Your Vocabulary While You Play</h2>
+          <p>An unscrambler is not only a game helper. It is also a simple way to learn new words. Each search can introduce you to different word forms, prefixes, suffixes, and spelling patterns.</p>
+          <p>Over time, using a word unscrambler can help improve:</p>
+          <ul>
+            <li>Vocabulary</li>
+            <li>Spelling</li>
+            <li>Pattern recognition</li>
+            <li>Puzzle-solving speed</li>
+            <li>Word game confidence</li>
+          </ul>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Start Unscrambling Words Instantly</h2>
+          <p>Stop letting scrambled letters block your next move. Enter your letters, explore possible word combinations, and find the best answer in seconds. Whether you are solving an anagram, completing a crossword, or chasing a higher score in Scrabble, our Unscramble Words tool gives you fast, clear, and useful results.</p>
+        </section>
+      </article>
     </div>
   </div>
 
   <SchemaOrg data={appSchema} />
-  <SeoSchemaBlocks faqs={faqs} />
 </Layout>
