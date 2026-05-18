@@ -12,6 +12,7 @@ export const headerWordLists = [
   { name: 'Words Start With', href: '/words-start-with' },
   { name: 'Words With', href: '/words-with-letters' },
   { name: 'Words Ending In', href: '/words-ending-in' },
+  { name: 'Words By Length', href: '/words-by-length' },
 ] as const;
 
 export type HeaderDailyHint = { name: string; subtitle: string; href: string };

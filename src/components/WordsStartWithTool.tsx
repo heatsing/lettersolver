@@ -46,6 +46,10 @@ interface ResultRow {
   score: number;
 }
 
+interface WordsStartWithToolProps {
+  variant?: "default" | "finder-card";
+}
+
 function HintIcon({ label }: { label: string }) {
   return (
     <span className="wst-field-hint" title={label} aria-label={label} role="img">
@@ -54,8 +58,9 @@ function HintIcon({ label }: { label: string }) {
   );
 }
 
-export default function WordsStartWithTool() {
-  const showTopDictionaryTabs = true;
+export default function WordsStartWithTool({ variant = "default" }: WordsStartWithToolProps) {
+  const isFinderCard = variant === "finder-card";
+  const showTopDictionaryTabs = !isFinderCard;
   const [letters, setLetters] = useState("");
   const [starts, setStarts] = useState("");
   const [ends, setEnds] = useState("");
@@ -133,7 +138,7 @@ export default function WordsStartWithTool() {
   }, [letters, starts, ends, contains, exclude, include, lengthStr, wildOk, dictMode]);
 
   return (
-    <div className="wst-tool">
+    <div className={`wst-tool ${isFinderCard ? "wst-tool-finder-card" : ""}`}>
       {showTopDictionaryTabs && (
         <div className="wst-dict-tabs" role="tablist" aria-label="Dictionary selector">
           {[
@@ -157,6 +162,25 @@ export default function WordsStartWithTool() {
         </div>
       )}
 
+      {isFinderCard && (
+        <div className="wst-dict-pill" aria-label="Dictionary selector">
+          <span className="wst-dict-badge">W</span>
+          <select
+            className="wst-dict-pill-select"
+            value={dictMode}
+            onChange={(e) => setDictMode(e.target.value as DictMode)}
+            aria-label="Dictionary"
+          >
+            <option value="wwf">Words With Friends</option>
+            <option value="scrabble_us">Scrabble US</option>
+            <option value="scrabble_uk">Scrabble UK</option>
+            <option value="nyt_crossplay">NYT Crossplay</option>
+            <option value="all">All Dictionaries</option>
+          </select>
+        </div>
+      )}
+
+      <div className="wst-form-shell">
       <div className="wst-main-search">
         <svg
           className="wst-search-icon"
@@ -175,7 +199,7 @@ export default function WordsStartWithTool() {
         <input
           type="text"
           className="wst-main-input"
-          placeholder="YOUR LETTERS"
+          placeholder={isFinderCard ? "Your rack letters & up to 3 wildcards (?)" : "YOUR LETTERS"}
           value={letters}
           onChange={(e) =>
             setLetters(e.target.value.toUpperCase().replace(/[^A-Z?\s]/g, ""))
@@ -308,8 +332,9 @@ export default function WordsStartWithTool() {
           onClick={handleSearch}
           disabled={loading || !wildOk}
         >
-          {loading ? "Searching…" : "SEARCH"}
+          {loading ? "Searching..." : isFinderCard ? "Search" : "SEARCH"}
         </button>
+      </div>
       </div>
 
       {error && <p className="wst-error">{error}</p>}
@@ -337,6 +362,124 @@ export default function WordsStartWithTool() {
 
       <style>{`
         .wst-tool { max-width: 36rem; margin: 0 auto; }
+        .wst-tool-finder-card {
+          max-width: 46rem;
+        }
+        .wst-dict-pill {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.9rem;
+          margin: 0 auto 1.5rem;
+        }
+        .wst-dict-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 3.25rem;
+          height: 3.25rem;
+          border-radius: 999px;
+          border: 4px solid rgb(255 255 255 / 0.85);
+          background: #fff3ee;
+          color: #9b6b60;
+          font-weight: 800;
+          font-size: 1.25rem;
+          box-shadow: 0 4px 0 rgb(0 0 0 / 0.18);
+        }
+        .wst-dict-pill-select {
+          min-width: 14rem;
+          height: 3.6rem;
+          border: 0;
+          border-radius: 999px;
+          background: rgb(28 94 54 / 0.55);
+          color: #fff;
+          font-size: 1.05rem;
+          font-weight: 800;
+          padding: 0 3rem 0 1.35rem;
+          cursor: pointer;
+          outline: none;
+        }
+        .wst-dict-pill-select option {
+          color: #0f172a;
+        }
+        .wst-tool-finder-card .wst-form-shell {
+          background: #fff;
+          border-radius: 1rem;
+          padding: 1.5rem;
+          box-shadow: 0 16px 40px rgb(15 23 42 / 0.16);
+        }
+        .wst-tool-finder-card .wst-main-search {
+          border: 2px solid #111827;
+          border-radius: 1rem;
+          box-shadow: none;
+          margin-bottom: 0.65rem;
+          padding: 0.85rem 1.1rem;
+        }
+        .wst-tool-finder-card .wst-main-input {
+          text-align: left;
+          text-transform: none;
+          letter-spacing: 0;
+          font-weight: 500;
+          font-size: 1.05rem;
+        }
+        .wst-tool-finder-card .wst-advanced {
+          box-shadow: none;
+          padding: 0;
+          border-radius: 0;
+        }
+        .wst-tool-finder-card .wst-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 0.5rem;
+        }
+        .wst-tool-finder-card .wst-grid .wst-field:nth-child(n + 5),
+        .wst-tool-finder-card .wst-select-wrap {
+          display: none;
+        }
+        .wst-tool-finder-card .wst-field {
+          gap: 0.3rem;
+        }
+        .wst-tool-finder-card .wst-field-label {
+          color: #334155;
+          font-size: 0.8rem;
+          font-weight: 800;
+          padding: 0 0.15rem;
+        }
+        .wst-tool-finder-card .wst-field-input {
+          min-height: 3.45rem;
+          border: 1px solid #d7dde4;
+          border-radius: 0.75rem;
+          padding: 0 0.85rem;
+          color: #0f172a;
+          font-size: 1rem;
+          font-weight: 600;
+          background: #fff;
+        }
+        .wst-tool-finder-card .wst-search-btn {
+          display: block;
+          width: min(12rem, 100%);
+          margin: 1.5rem auto 0;
+          text-transform: none;
+          letter-spacing: 0;
+          font-size: 1.05rem;
+          color: #111827;
+          background: #f2c244;
+          box-shadow: none;
+        }
+        @media (max-width: 680px) {
+          .wst-tool-finder-card .wst-form-shell {
+            padding: 1rem;
+          }
+          .wst-tool-finder-card .wst-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+          .wst-dict-pill {
+            gap: 0.55rem;
+          }
+          .wst-dict-pill-select {
+            min-width: 11rem;
+            font-size: 0.95rem;
+          }
+        }
         .wst-dict-tabs {
           display: flex;
           flex-wrap: wrap;

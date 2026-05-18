@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import { getMeta } from '@/lib/meta';
 import { getLengthPath } from '@/lib/length-slugs';
 import InternalLinks from '@/components/InternalLinks.astro';
+import WordsStartWithTool from '@/components/WordsStartWithTool';
 
 const meta = getMeta(
   '/words-by-length',
@@ -21,15 +22,37 @@ const lengthsData = [
   { length: 9, title: '9 Letter Words' },
   { length: 10, title: '10 Letter Words' },
 ];
+
+const HERO_BG = '#79AE6F';
 ---
 
-<Layout meta={meta}>
-  <section class="text-center mb-12">
-    <h1 class="text-4xl font-bold mb-4 text-foreground">Words By Length</h1>
-    <p class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-      Browse our dictionary by word length to find 2-letter through 10-letter words for Wordle, Scrabble, Words With Friends, crosswords, and other word games.
-    </p>
-  </section>
+<Layout meta={meta} fullBleed={true}>
+  <div class="wbl-page" style={`--wbl-hero-bg: ${HERO_BG}`}>
+    <section class="wbl-hero">
+      <div class="wbl-hero-inner">
+        <nav class="wbl-bc" aria-label="Breadcrumb">
+          <a href="/">Letter Solver</a>
+          <span class="wbl-bc-sep">/</span>
+          <span class="wbl-bc-current">Words By Length</span>
+        </nav>
+
+        <h1 class="wbl-h1">Words By Length</h1>
+        <p class="wbl-sub">
+          Find words by letter count, rack letters, starting letters, ending letters, and contains filters.
+        </p>
+
+        <WordsStartWithTool client:load variant="finder-card" />
+      </div>
+    </section>
+
+    <main class="wbl-content">
+      <div class="wbl-content-inner">
+        <section class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4 text-foreground">Browse Words By Length</h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Browse our dictionary by word length to find 2-letter through 10-letter words for Wordle, Scrabble, Words With Friends, crosswords, and other word games.
+          </p>
+        </section>
 
   <section class="mb-12" aria-labelledby="length-cards-heading">
     <h2 id="length-cards-heading" class="sr-only">Choose word length</h2>
@@ -118,4 +141,65 @@ const lengthsData = [
   <div class="mt-12">
     <InternalLinks />
   </div>
+      </div>
+    </main>
+  </div>
 </Layout>
+
+<style>
+  .wbl-page {
+    min-height: calc(100vh - 3.25rem);
+    display: flex;
+    flex-direction: column;
+  }
+  .wbl-hero {
+    background: linear-gradient(135deg, #69bd8d 0%, #4fb482 48%, #34743d 100%);
+    padding: 1.5rem 1rem 2rem;
+    color: #fff;
+  }
+  .wbl-hero-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+  .wbl-bc {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: rgb(255 255 255 / 0.92);
+    margin-bottom: 1.2rem;
+  }
+  .wbl-bc a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .wbl-bc a:hover {
+    text-decoration: underline;
+  }
+  .wbl-bc-sep {
+    margin: 0 0.35rem;
+    opacity: 0.85;
+  }
+  .wbl-h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.35rem, 5vw, 3.75rem);
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+  .wbl-sub {
+    margin: 0 auto 1.5rem;
+    max-width: 42rem;
+    color: rgb(255 255 255 / 0.96);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .wbl-content {
+    padding: 3rem 1rem 4rem;
+  }
+  .wbl-content-inner {
+    max-width: 68rem;
+    margin: 0 auto;
+  }
+</style>
