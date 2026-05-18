@@ -171,11 +171,11 @@ export default function WordsStartWithTool({ variant = "default" }: WordsStartWi
             onChange={(e) => setDictMode(e.target.value as DictMode)}
             aria-label="Dictionary"
           >
-            <option value="wwf">Words With Friends</option>
+            <option value="all">All Dictionaries</option>
             <option value="scrabble_us">Scrabble US</option>
             <option value="scrabble_uk">Scrabble UK</option>
             <option value="nyt_crossplay">NYT Crossplay</option>
-            <option value="all">All Dictionaries</option>
+            <option value="wwf">Words With Friends</option>
           </select>
         </div>
       )}
@@ -370,7 +370,7 @@ export default function WordsStartWithTool({ variant = "default" }: WordsStartWi
           align-items: center;
           justify-content: center;
           gap: 0.9rem;
-          margin: 0 auto 1.5rem;
+          margin: 0 auto 2rem;
         }
         .wst-dict-badge {
           display: inline-flex;

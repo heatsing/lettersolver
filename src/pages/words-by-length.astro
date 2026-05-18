@@ -23,7 +23,7 @@ const lengthsData = [
   { length: 10, title: '10 Letter Words' },
 ];
 
-const HERO_BG = '#79AE6F';
+const HERO_BG = '#4E824E';
 ---
 
 <Layout meta={meta} fullBleed={true}>
@@ -31,7 +31,7 @@ const HERO_BG = '#79AE6F';
     <section class="wbl-hero">
       <div class="wbl-hero-inner">
         <nav class="wbl-bc" aria-label="Breadcrumb">
-          <a href="/">Letter Solver</a>
+          <a href="/">WordTips</a>
           <span class="wbl-bc-sep">/</span>
           <span class="wbl-bc-current">Words By Length</span>
         </nav>
@@ -153,8 +153,8 @@ const HERO_BG = '#79AE6F';
     flex-direction: column;
   }
   .wbl-hero {
-    background: linear-gradient(135deg, #69bd8d 0%, #4fb482 48%, #34743d 100%);
-    padding: 1.5rem 1rem 2rem;
+    background: var(--wbl-hero-bg);
+    padding: 0 1rem 2rem;
     color: #fff;
   }
   .wbl-hero-inner {
@@ -165,7 +165,7 @@ const HERO_BG = '#79AE6F';
     font-size: 0.875rem;
     font-weight: 700;
     color: rgb(255 255 255 / 0.92);
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.5rem;
   }
   .wbl-bc a {
     color: #fff;
@@ -180,7 +180,7 @@ const HERO_BG = '#79AE6F';
   }
   .wbl-h1 {
     margin: 0 0 0.5rem;
-    font-size: clamp(2.35rem, 5vw, 3.75rem);
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
     font-weight: 900;
     color: #fff;
     text-align: center;
@@ -188,7 +188,7 @@ const HERO_BG = '#79AE6F';
     letter-spacing: 0;
   }
   .wbl-sub {
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2.25rem;
     max-width: 42rem;
     color: rgb(255 255 255 / 0.96);
     text-align: center;
