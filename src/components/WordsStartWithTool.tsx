@@ -163,20 +163,25 @@ export default function WordsStartWithTool({ variant = "default" }: WordsStartWi
       )}
 
       {isFinderCard && (
-        <div className="wst-dict-pill" aria-label="Dictionary selector">
-          <span className="wst-dict-badge">W</span>
-          <select
-            className="wst-dict-pill-select"
-            value={dictMode}
-            onChange={(e) => setDictMode(e.target.value as DictMode)}
-            aria-label="Dictionary"
-          >
-            <option value="all">All Dictionaries</option>
-            <option value="scrabble_us">Scrabble US</option>
-            <option value="scrabble_uk">Scrabble UK</option>
-            <option value="nyt_crossplay">NYT Crossplay</option>
-            <option value="wwf">Words With Friends</option>
-          </select>
+        <div className="wst-dict-pill" role="tablist" aria-label="Dictionary selector">
+          {[
+            { id: "scrabble_us" as const, label: "Scrabble US" },
+            { id: "scrabble_uk" as const, label: "Scrabble UK" },
+            { id: "nyt_crossplay" as const, label: "NYT Crossplay" },
+            { id: "wwf" as const, label: "Words With Friends" },
+            { id: "all" as const, label: "All Dictionaries" },
+          ].map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={dictMode === item.id}
+              className={`wst-dict-pill-btn ${dictMode === item.id ? "is-active" : ""}`}
+              onClick={() => setDictMode(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       )}
 
@@ -367,39 +372,31 @@ export default function WordsStartWithTool({ variant = "default" }: WordsStartWi
         }
         .wst-dict-pill {
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          gap: 0.9rem;
+          gap: 0.45rem;
           margin: 0 auto 2rem;
         }
-        .wst-dict-badge {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 3.25rem;
-          height: 3.25rem;
+        .wst-dict-pill-btn {
+          border: 1px solid rgb(255 255 255 / 0.7);
           border-radius: 999px;
-          border: 4px solid rgb(255 255 255 / 0.85);
-          background: #fff3ee;
-          color: #9b6b60;
-          font-weight: 800;
-          font-size: 1.25rem;
-          box-shadow: 0 4px 0 rgb(0 0 0 / 0.18);
-        }
-        .wst-dict-pill-select {
-          min-width: 14rem;
-          height: 3.6rem;
-          border: 0;
-          border-radius: 999px;
-          background: rgb(28 94 54 / 0.55);
+          background: rgb(255 255 255 / 0.08);
           color: #fff;
-          font-size: 1.05rem;
+          font-size: 0.9rem;
           font-weight: 800;
-          padding: 0 3rem 0 1.35rem;
+          line-height: 1;
+          padding: 0.72rem 0.95rem;
           cursor: pointer;
-          outline: none;
+          white-space: nowrap;
+          transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
         }
-        .wst-dict-pill-select option {
+        .wst-dict-pill-btn:hover {
+          background: rgb(255 255 255 / 0.18);
+        }
+        .wst-dict-pill-btn.is-active {
+          background: #fff;
+          border-color: #fff;
           color: #0f172a;
         }
         .wst-tool-finder-card .wst-form-shell {
@@ -472,12 +469,10 @@ export default function WordsStartWithTool({ variant = "default" }: WordsStartWi
           .wst-tool-finder-card .wst-grid {
             grid-template-columns: 1fr 1fr;
           }
-          .wst-dict-pill {
-            gap: 0.55rem;
-          }
-          .wst-dict-pill-select {
-            min-width: 11rem;
-            font-size: 0.95rem;
+          .wst-dict-pill { gap: 0.4rem; }
+          .wst-dict-pill-btn {
+            font-size: 0.82rem;
+            padding: 0.62rem 0.75rem;
           }
         }
         .wst-dict-tabs {
