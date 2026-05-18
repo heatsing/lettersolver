@@ -2,8 +2,6 @@
 import Layout from '@/layouts/Layout.astro';
 import UnscrambleTool from '@/components/UnscrambleTool';
 import AdSense from '@/components/AdSense';
-import InternalLinks from '@/components/InternalLinks.astro';
-import SeoSchemaBlocks from '@/components/SeoSchemaBlocks.astro';
 import { getMeta } from '@/lib/meta';
 
 const meta = getMeta(
@@ -11,29 +9,6 @@ const meta = getMeta(
   'Word Solver - Find Any Word from Letters | Letter Solver',
   'Free word solver: enter your letters to find every valid word, sorted by score. Works for Scrabble, Wordle, anagrams, and crossword solving.'
 );
-
-const faqs = [
-  {
-    question: 'What is a word solver?',
-    answer:
-      'A word solver is a tool that takes your letters and returns every valid word you can build. It helps with Scrabble, anagrams, crossword fills, and daily word games.',
-  },
-  {
-    question: 'Can I use wildcards?',
-    answer:
-      'Yes. Enter up to 3 wildcards using ? or space. Wildcards act as blank tiles and can represent any letter.',
-  },
-  {
-    question: 'How are results sorted?',
-    answer:
-      'By default results are sorted by score, so high-value plays appear first. You can also filter by word length to fit your board or puzzle slot.',
-  },
-  {
-    question: 'Is this tool free?',
-    answer:
-      'Yes. The word solver is fully free with no login and no limits.',
-  },
-];
 
 ---
 
@@ -53,36 +28,96 @@ const faqs = [
     <div class="tool-content">
       <AdSense />
 
-      <div class="page-wrapper">
-        <h2 class="page-h2">How to Use This Word Solver</h2>
-        <div class="page-body">
-          <p><strong>1)</strong> Enter your letters from the rack or puzzle.</p>
-          <p><strong>2)</strong> (Optional) set min/max length to match open board slots.</p>
-          <p><strong>3)</strong> Press search and pick the highest scoring playable word.</p>
-        </div>
+      <article class="page-wrapper space-y-9">
+        <section class="page-body">
+          <h2 class="page-h2">Word Solver</h2>
+          <p>Looking for the best <strong>Word Solver</strong> to help you win at Scrabble, Words With Friends, Wordle, crosswords, and other word games? Our advanced word finder helps you quickly turn scrambled letters into valid words, making it easier to discover high-scoring combinations and solve difficult puzzles in seconds.</p>
+          <p>Simply enter your letters, choose optional filters like word length or starting patterns, and instantly generate matching word results. Whether you're searching for short everyday words or complex vocabulary, our Word Solver gives you smarter possibilities for every move.</p>
+        </section>
 
-        <h2 class="page-h2">Best Use Cases</h2>
-        <div class="page-body">
-          <p>Use this page as your universal solver for <a href="/scrabble" class="text-primary hover:underline">Scrabble</a>, <a href="/words-with-friends" class="text-primary hover:underline">Words With Friends</a>, <a href="/wordle-solver" class="text-primary hover:underline">Wordle</a>, and <a href="/crossword-solver" class="text-primary hover:underline">crossword clues</a>.</p>
-        </div>
+        <section class="page-body">
+          <h2 class="page-h2">What Is a Word Solver?</h2>
+          <p>A <strong>Word Solver</strong> is an online tool designed to create words from mixed or scrambled letters. It helps players find valid word combinations for popular word games and vocabulary puzzles.</p>
+          <p>Instead of spending time manually rearranging letters, the solver automatically scans thousands of dictionary words to generate accurate results instantly. This makes it perfect for:</p>
+          <ul>
+            <li>Scrabble</li>
+            <li>Words With Friends</li>
+            <li>Wordle</li>
+            <li>Crossword puzzles</li>
+            <li>Anagram games</li>
+            <li>Word cookies and daily puzzles</li>
+          </ul>
+          <p>Whether you're a beginner learning new vocabulary or a competitive player chasing high scores, a word finder can dramatically improve your gameplay experience.</p>
+        </section>
 
-        <h2 class="page-h2">Frequently Asked Questions</h2>
-        <div class="space-y-3">
-          {faqs.map((faq) => (
-            <details class="faq-details">
-              <summary class="faq-summary">
-                <span class="font-semibold text-foreground text-[15px]">{faq.question}</span>
-                <span class="faq-icon">+</span>
-              </summary>
-              <div class="faq-body">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-        <InternalLinks />
-      </div>
+        <section class="page-body">
+          <h2 class="page-h2">Why Use a Word Solver?</h2>
+          <p>Word games often become challenging when you're stuck with difficult letter combinations or limited board options. Using a <strong>Word Solver</strong> helps you uncover hidden opportunities and improve your strategy.</p>
+          <h3 class="text-2xl font-bold text-foreground">Benefits of Using a Word Finder</h3>
+          <ul>
+            <li>Find words faster</li>
+            <li>Discover high-scoring plays</li>
+            <li>Improve your vocabulary naturally</li>
+            <li>Solve difficult anagrams instantly</li>
+            <li>Save time during competitive games</li>
+            <li>Learn new word combinations and patterns</li>
+          </ul>
+          <p>A single strong word can completely change the outcome of a game. Longer words, rare letter combinations, and strategic placements can help maximize your score and open up better moves on the board.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">How To Use the Word Solver</h2>
+          <p>Using our tool is quick and simple:</p>
+          <h3 class="text-2xl font-bold text-foreground">Step 1: Enter Your Letters</h3>
+          <p>Type the letters you currently have into the search box.</p>
+          <h3 class="text-2xl font-bold text-foreground">Step 2: Apply Filters</h3>
+          <p>You can narrow your search by:</p>
+          <ul>
+            <li>Word length</li>
+            <li>Starting letters</li>
+            <li>Ending letters</li>
+            <li>Included patterns</li>
+            <li>Wildcard letters</li>
+          </ul>
+          <h3 class="text-2xl font-bold text-foreground">Step 3: Generate Results</h3>
+          <p>Click the search button to instantly view matching words and possible combinations.</p>
+          <p>For example, entering the letters <strong>CIUTJSE</strong> may generate results such as:</p>
+          <ul>
+            <li>JUSTICE</li>
+            <li>JUICES</li>
+            <li>CUTIES</li>
+            <li>JESUIT</li>
+            <li>SUITE</li>
+            <li>JEST</li>
+          </ul>
+          <p>These suggestions help you find the strongest possible play for your current game situation.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Word Solver for Scrabble and Words With Friends</h2>
+          <p>Our <strong>Scrabble Word Finder</strong> and <strong>Words With Friends Solver</strong> are optimized to help players discover valid dictionary words accepted in popular word games. From short tactical plays to advanced vocabulary, the tool helps maximize points while improving your understanding of word patterns.</p>
+          <p>Whether you're trying to use difficult letters like Q, X, Z, or J, or searching for long bonus words, our solver helps reveal combinations you may never notice on your own.</p>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Improve Your Vocabulary While Playing</h2>
+          <p>One of the best things about using a Word Solver is that it naturally helps expand your vocabulary. As you discover new words and combinations, you'll begin recognizing patterns, prefixes, suffixes, and uncommon letter arrangements more easily.</p>
+          <p>Over time, this can improve:</p>
+          <ul>
+            <li>Spelling skills</li>
+            <li>Word recognition</li>
+            <li>Puzzle-solving ability</li>
+            <li>Language confidence</li>
+            <li>Strategic thinking in word games</li>
+          </ul>
+        </section>
+
+        <section class="page-body">
+          <h2 class="page-h2">Find Better Words Faster</h2>
+          <p>From casual puzzle fans to competitive word game enthusiasts, our Word Solver is designed to help everyone play smarter. Whether you're solving a daily crossword, searching for anagrams, or finding the perfect Scrabble move, our tool gives you fast, accurate, and reliable results every time.</p>
+          <p>Stop guessing and start discovering better words instantly.</p>
+        </section>
+      </article>
     </div>
   </div>
-  <SeoSchemaBlocks faqs={faqs} />
 </Layout>
