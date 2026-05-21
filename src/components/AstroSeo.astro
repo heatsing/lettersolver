@@ -12,6 +12,7 @@ interface Props {
   ogImage?: string;
   twitterCard?: "summary" | "summary_large_image";
   twitterSite?: string;
+  noTitleSuffix?: boolean;
 }
 
 const {
@@ -23,9 +24,10 @@ const {
   ogImage,
   twitterCard = "summary_large_image",
   twitterSite = "@wordunscrambler",
+  noTitleSuffix = false,
 } = Astro.props;
 
-const fullTitle = title.includes("|") ? title : `${title} | Letter Solver`;
+const fullTitle = noTitleSuffix || title.includes("|") ? title : `${title} | Letter Solver`;
 const origin = canonical.startsWith("http") ? new URL(canonical).origin : SITE;
 const resolvedOgImage = ogImage ?? `${origin}${ASSET_PATHS.ogImage}`;
 ---

@@ -9,6 +9,7 @@ export interface PageMeta {
   ogImage?: string;
   twitterCard?: 'summary' | 'summary_large_image';
   twitterSite?: string;
+  noTitleSuffix?: boolean;
 }
 
 export function getMeta(
@@ -21,6 +22,7 @@ export function getMeta(
     ogImage?: string;
     twitterCard?: 'summary' | 'summary_large_image';
     twitterSite?: string;
+    noTitleSuffix?: boolean;
   }
 ): PageMeta {
   const canonical = path.startsWith('http') ? path : `${BASE}${path.startsWith('/') ? path : `/${path}`}`;
@@ -33,6 +35,7 @@ export function getMeta(
     ogImage: options?.ogImage,
     twitterCard: options?.twitterCard,
     twitterSite: options?.twitterSite,
+    noTitleSuffix: options?.noTitleSuffix,
   };
 }
 
